@@ -1,0 +1,261 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Vibrant India Magazine - Subscription Order</title>
+<link href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.0/css/all.min.css" rel="stylesheet">
+<style>
+:root {
+--primary-color: #e63946;
+--secondary-color: #1d3557;
+--bg-dark: #111;
+--text-light: #fff;
+}
+body {
+  margin:0; 
+  font-family: Arial, sans-serif; 
+  background: #191919; 
+  color: var(--text-light);
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  min-height: 100vh;
+}
+.container { 
+  max-width: 650px; 
+  padding: 30px;
+  background: #101010;
+  border-radius: 15px;
+  box-shadow: 0 10px 30px rgba(0, 0, 0, 0.5);
+  border-top: 5px solid var(--primary-color);
+    position: relative;
+}
+.back-button {
+    position: absolute;
+    top: 15px;
+    left: 20px;
+    color: #ccc;
+    font-size: 1.5rem;
+    cursor: pointer;
+    transition: color 0.3s;
+}
+.back-button:hover {
+    color: var(--primary-color);
+}
+
+.header {
+  text-align: center;
+  margin-bottom: 30px;
+}
+.header h1 {
+  color: var(--primary-color);
+  font-size: 2rem;
+  font-weight: bold;
+}
+.header p {
+  color: #ccc;
+}
+
+/* Form Styles */
+.form-label {
+  display: block; 
+  margin-bottom: 5px; 
+  color: var(--text-light);
+  font-weight: 600;
+}
+.form-control, .form-select {
+  width: 100%;
+  padding: 12px;
+  margin-bottom: 15px;
+  border-radius: 8px;
+  border: 1px solid #444;
+  background: #2b2b2b;
+  color: var(--text-light);
+  box-sizing: border-box;
+  appearance: none; 
+  -webkit-appearance: none;
+  background-image: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 16 16'%3E%3Cpath fill='white' d='M7.247 11.14 2.451 5.658C1.885 5.013 2.345 4 3.204 4h9.592c.86 0 1.32 1.013.754 1.658L8.753 11.14a.959.959 0 0 1-1.506 0z'/%3E%3C/svg%3E");
+  background-repeat: no-repeat;
+  background-position: right 0.75rem center;
+  background-size: 10px 10px;
+}
+.form-control:focus, .form-select:focus {
+  outline: none;
+  border-color: var(--primary-color);
+  box-shadow: 0 0 0 1px var(--primary-color);
+}
+.form-text {
+  font-size: 0.85rem;
+  color: #aaa;
+  margin-top: -10px;
+  margin-bottom: 20px;
+}
+.mb-3 { margin-bottom: 1.5rem; }
+.mb-4 { margin-bottom: 2rem; }
+.d-grid { display: grid; }
+.gap-2 { gap: 1rem; }
+.btn-primary-custom {
+  background: var(--primary-color); 
+  border: none; 
+  padding: 12px 35px; 
+  font-weight: 700; 
+  text-transform: uppercase; 
+  letter-spacing: 1px; 
+  color: #fff; 
+  cursor: pointer; 
+  transition: all 0.3s ease; 
+  border-radius: 8px;
+    width: 100%; /* Full width button on all screens */
+}
+.btn-primary-custom:hover {
+  background: #ff5e6c; 
+  transform: translateY(-2px);
+}
+.text-center { text-align: center; }
+
+/* --- RESPONSIVE ADJUSTMENTS --- */
+@media (max-width: 768px) {
+    body {
+        /* Remove min-height to prevent vertical scroll issues on mobile when content is short */
+        min-height: auto; 
+    }
+    .container {
+        /* Make container full width with padding on the body */
+        max-width: 100%;
+        margin: 0;
+        border-radius: 0; /* Remove rounding for full screen feel */
+        padding: 60px 20px 30px 20px; /* More vertical padding */
+        min-height: 100vh; /* Ensure it covers viewport */
+    }
+    .header h1 {
+        font-size: 1.7rem;
+    }
+    .header p {
+        font-size: 0.95rem;
+    }
+    .back-button {
+        top: 20px;
+        left: 20px;
+        font-size: 1.3rem;
+    }
+}
+</style>
+</head>
+<body>
+
+<div class="container">
+    <i class="fa-solid fa-circle-arrow-left back-button" onclick="history.back()"></i>
+
+  <div class="header">
+    <h1>Finalize Your Subscription</h1>
+    <p>Please fill out all the required details below to complete your order via WhatsApp.</p>
+  </div>
+
+  <form id="subscription-form">
+    
+    <div class="mb-4">
+      <label for="plan-select" class="form-label">Selected Subscription Plan</label>
+      <select class="form-select" id="plan-select" name="plan-select" required>
+        <option value="" selected disabled>--- Select a Subscription Plan ---</option>
+        <option value="6 Months Plan (₹1000)">6 Months Plan (₹1000)</option>
+        <option value="12 Months Plan (₹2000)">12 Months Plan (₹2000) - Best Value</option>
+        <option value="Lifetime Plan (₹7350)">Lifetime Plan (₹7350) - VIP Perks</option>
+      </select>
+      <p style="color: #e63946; font-weight: bold; margin-top: 5px;">
+        *Please select your desired plan above.
+      </p>
+    </div>
+    
+    <div class="mb-3">
+      <label for="name" class="form-label">Full Name</label>
+      <input type="text" class="form-control" id="name" name="name" required>
+    </div>
+    <div class="mb-3">
+      <label for="email" class="form-label">Email Address</label>
+      <input type="email" class="form-control" id="email" name="email" required>
+    </div>
+    <div class="mb-3">
+      <label for="phone" class="form-label">WhatsApp Mobile Number</label>
+      <input type="tel" class="form-control" id="phone" name="phone" placeholder="919876543210" required>
+      <div class="form-text">Please enter the number you use for WhatsApp (include country code, e.g., 91)</div>
+    </div>
+    <div class="mb-4">
+      <label for="address" class="form-label">Delivery Address</label>
+      <textarea class="form-control" id="address" name="address" rows="3" required placeholder="Enter your full address for print delivery"></textarea>
+    </div>
+
+    <div class="d-grid gap-2">
+      <p class="text-center mt-3 small" style="color:#aaa;">
+        *Clicking below will open WhatsApp to send your order details and receive payment instructions.
+      </p>
+      <button type="submit" class="btn btn-primary-custom btn-lg"><i class="fa-brands fa-whatsapp me-2"></i> Send Order via WhatsApp</button>
+    </div>
+  </form>
+</div>
+
+<script>
+  document.addEventListener('DOMContentLoaded', function() {
+    // *** IMPORTANT: REPLACE THIS WITH YOUR WHATSAPP NUMBER (e.g., 919876543210) ***
+    const whatsappNumber = "+918511172099"; 
+    
+    const subscriptionForm = document.getElementById('subscription-form');
+    const planSelect = document.getElementById('plan-select');
+
+    // --- 1. Read and pre-select the plan from the URL ---
+    const urlParams = new URLSearchParams(window.location.search);
+    const selectedPlan = urlParams.get('plan') ? decodeURIComponent(urlParams.get('plan')) : null;
+
+    if (selectedPlan) {
+      const optionToSelect = planSelect.querySelector(`option[value="${selectedPlan}"]`);
+      if (optionToSelect) {
+        planSelect.value = selectedPlan;
+      }
+    }
+    
+    // --- 2. Handle Form Submission (Send to WhatsApp) ---
+    subscriptionForm.addEventListener('submit', function(e) {
+      e.preventDefault();
+      
+      // Get the final selected plan value
+      const finalPlan = planSelect.value; 
+
+      // Check plan selection (important since the default option is disabled)
+      if (!finalPlan) {
+        alert("Please select a Subscription Plan from the dropdown before proceeding.");
+        planSelect.focus();
+        return;
+      }
+
+      // Get other form values
+      const name = document.getElementById('name').value.trim();
+      const email = document.getElementById('email').value.trim();
+      const phone = document.getElementById('phone').value.trim();
+      const address = document.getElementById('address').value.trim(); 
+
+      // Construct the message text using '%0A' for a new line
+      let whatsappMessage = `Hello! I would like to subscribe to the *${finalPlan}*.%0A%0A`;
+      whatsappMessage += `*Subscription Order Details:*%0A`;
+      whatsappMessage += `Name: ${name}%0A`;
+      whatsappMessage += `Email: ${email}%0A`;
+      whatsappMessage += `Phone/WhatsApp: ${phone}%0A`;
+      whatsappMessage += `Delivery Address: ${address}%0A%0A`;
+      whatsappMessage += `Please send me the payment link/details to complete my order. Thank you!`;
+
+      // Create and open the WhatsApp URL
+      const encodedMessage = encodeURIComponent(whatsappMessage);
+      const whatsappURL = `https://wa.me/${whatsappNumber}?text=${encodedMessage}`;
+
+      // Open in a new tab/window
+      window.open(whatsappURL, '_blank');
+      
+      // Inform the user and clear the form
+      alert("Thank you! Opening WhatsApp chat now to finalize your subscription. Your form will now reset.");
+      subscriptionForm.reset();
+      planSelect.value = ""; // Clear the selection after reset
+    });
+  });
+</script>
+
+</body>
+</html>

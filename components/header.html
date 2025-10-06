@@ -1,0 +1,245 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+  <title>Vibrant India Magazine</title>
+
+  <!-- Bootstrap CSS -->
+  <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/css/bootstrap.min.css" rel="stylesheet" />
+
+  <!-- Font Awesome -->
+  <link href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css" rel="stylesheet" />
+
+  <!-- Google Fonts -->
+  <link href="https://fonts.googleapis.com/css2?family=Playfair+Display:wght@700;900&display=swap" rel="stylesheet" />
+
+  <style>
+    :root {
+      --nav-bg: rgba(18, 18, 18, 0.95);
+      --dropdown-bg: #1f1f1f;
+      --text-color: #e0e0e0;
+      --hover-color: rgba(255, 255, 255, 0.08);
+    }
+
+    body {
+      background-color: #111;
+      margin: 0;
+      font-family: 'Playfair Display', serif !important;
+    }
+
+    /* Navbar */
+    .custom-navbar {
+      background-color: var(--nav-bg);
+      backdrop-filter: blur(6px);
+      box-shadow: 0 0 12px rgba(0, 0, 0, 0.6);
+    }
+
+    .navbar-brand {
+      font-size: clamp(1.2rem, 3vw, 2rem);
+      font-weight: 900;
+      text-transform: uppercase;
+      background: linear-gradient(135deg, #d7d7d7, #a0a0a0, #ffffff, #c0c0c0);
+      background-size: 200%;
+      -webkit-background-clip: text;
+      -webkit-text-fill-color: transparent;
+      background-clip: text;
+      transition: background-position 0.8s ease;
+    }
+
+    .navbar-brand:hover {
+      background-position: right center;
+    }
+
+    /* Nav links */
+    .navbar-nav {
+      flex: 1;
+      justify-content: center;
+      gap: 45px;
+    }
+
+    .nav-link {
+      color: var(--text-color) !important;
+      font-weight: 500;
+      padding: 6px 12px;
+      border-radius: 6px;
+      transition: background-color 0.3s ease;
+      white-space: nowrap;
+      font-size: 0.95rem;
+    }
+
+    .nav-link:hover,
+    .nav-link.active {
+      background-color: var(--hover-color);
+      color: #fff !important;
+    }
+
+    /* Dropdown */
+    .dropdown-menu {
+      background-color: var(--dropdown-bg);
+      border: 1px solid rgba(255, 255, 255, 0.05);
+      border-radius: 8px;
+      box-shadow: 0 8px 16px rgba(0, 0, 0, 0.4);
+    }
+
+    .dropdown-item {
+      color: #ccc !important;
+      transition: background-color 0.3s ease;
+      white-space: nowrap;
+      font-size: 0.9rem;
+    }
+
+    .dropdown-item:hover {
+      background-color: var(--hover-color);
+      color: #fff !important;
+    }
+
+    .dropdown-item i {
+      color: #999;
+      margin-right: 6px;
+    }
+
+    /* Subscribe Button */
+    .btn-gradient {
+      background: linear-gradient(120deg, #7f8c8d, #bdc3c7);
+      color: #000;
+      font-weight: 700;
+      border: none;
+      border-radius: 8px;
+      padding: 7px 16px;
+      transition: all 0.3s ease;
+      white-space: nowrap;
+      display: flex;
+      align-items: center;
+      justify-content: center; /* center text */
+      gap: 6px;
+      font-size: 0.95rem;
+    }
+
+    .btn-gradient:hover {
+      transform: translateY(-2px);
+      background: linear-gradient(120deg, #bdc3c7, #7f8c8d);
+      color: #111;
+    }
+
+    /* Mobile view */
+    @media (max-width: 991.98px) {
+      .navbar-collapse {
+        background-color: var(--nav-bg);
+        padding: 10px 0;
+      }
+
+      .navbar-nav {
+        flex-direction: column;
+        justify-content: flex-start;
+        align-items: stretch;
+        gap: 0.7rem;
+      }
+
+      .subscribe-btn {
+        margin-top: 1rem;
+        text-align: center;
+      }
+
+      .btn-gradient {
+        width: 100%;
+      }
+    }
+
+    /* Desktop hover dropdown */
+    @media (min-width: 992px) {
+      .nav-item.dropdown .dropdown-toggle::after {
+        content: none;
+      }
+
+      .dropdown-hover:hover>.dropdown-menu {
+        display: block;
+      }
+
+      .subscribe-btn {
+        margin-left: 20px;
+      }
+
+      .btn-gradient {
+        width: auto;
+        justify-content: center;
+      }
+    }
+  </style>
+</head>
+
+<body>
+  <header class="navbar navbar-expand-lg navbar-dark fixed-top py-3 custom-navbar">
+    <div class="container-fluid">
+
+      <!-- Brand -->
+      <a class="navbar-brand" href="/index.html">Vibrant India Magazine</a>
+
+      <!-- Mobile Toggle -->
+      <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarNav"
+        aria-controls="navbarNav" aria-expanded="false" aria-label="Toggle navigation">
+        <span class="navbar-toggler-icon"></span>
+      </button>
+
+      <!-- Nav + Subscribe -->
+      <div class="collapse navbar-collapse" id="navbarNav">
+
+        <!-- Centered nav links -->
+        <ul class="navbar-nav mx-auto">
+          <li class="nav-item"><a class="nav-link" href="/index.html">Home</a></li>
+
+          <li class="nav-item dropdown dropdown-hover">
+            <a class="nav-link dropdown-toggle" href="#" id="aboutDropdown" data-bs-toggle="dropdown">About</a>
+            <ul class="dropdown-menu" aria-labelledby="aboutDropdown">
+              <li><a class="dropdown-item" href="/pages/about/aboutmagazine.html"><i class="fas fa-book-open"></i> About the Magazine</a></li>
+              <li><a class="dropdown-item" href="/pages/about/ourteam.html"><i class="fas fa-users"></i> Our Team</a></li>
+              <li><a class="dropdown-item" href="/pages/about/mission&vision.html"><i class="fas fa-bullseye"></i> Mission & Vision</a></li>
+            </ul>
+          </li>
+
+          <li class="nav-item dropdown dropdown-hover">
+            <a class="nav-link dropdown-toggle" href="#" id="industryDropdown" data-bs-toggle="dropdown">Industry</a>
+            <ul class="dropdown-menu" aria-labelledby="industryDropdown">
+              <li><a class="dropdown-item" href="/pages/Industry/industrynews.html"><i class="fas fa-newspaper"></i> Industry News</a></li>
+              <li><a class="dropdown-item" href="/pages/Industry/marketinsights.html"><i class="fas fa-chart-line"></i> Market Insights</a></li>
+              <li><a class="dropdown-item" href="/pages/Industry/report&analysis.html"><i class="fas fa-file-alt"></i> Reports & Analysis</a></li>
+            </ul>
+          </li>
+
+          <li class="nav-item dropdown dropdown-hover">
+            <a class="nav-link dropdown-toggle" href="#" id="featuresDropdown" data-bs-toggle="dropdown">Features</a>
+            <ul class="dropdown-menu" aria-labelledby="featuresDropdown">
+              <li><a class="dropdown-item" href="/pages/features/articles.html"><i class="fas fa-pen-nib"></i> Articles</a></li>
+              <li><a class="dropdown-item" href="/pages/features/interviews.html"><i class="fas fa-microphone"></i> Interviews</a></li>
+              <li><a class="dropdown-item" href="/pages/features/innovations.html"><i class="fas fa-lightbulb"></i> Innovations</a></li>
+            </ul>
+          </li>
+
+          <li class="nav-item dropdown dropdown-hover">
+            <a class="nav-link dropdown-toggle" href="#" id="advertiseDropdown" data-bs-toggle="dropdown">Advertise</a>
+            <ul class="dropdown-menu" aria-labelledby="advertiseDropdown">
+              <li><a class="dropdown-item" href="/pages/Advertise/advertisewithus.html"><i class="fas fa-bullhorn"></i> Advertise With Us</a></li>
+              <li><a class="dropdown-item" href="/pages/Advertise/sponsorship.html"><i class="fas fa-handshake"></i> Sponsorship</a></li>
+              <li><a class="dropdown-item" href="/pages/Advertise/mediakit.html"><i class="fas fa-folder-open"></i> Media Kit</a></li>
+            </ul>
+          </li>
+
+          <li class="nav-item"><a class="nav-link" href="/Contact.html">Contact</a></li>
+        </ul>
+
+        <!-- Subscribe button -->
+        <div class="subscribe-btn mt-3 mt-lg-0">
+          <a href="/subscribe.html" class="btn btn-gradient">
+            <i class="fas fa-envelope-open-text"></i> Subscribe
+          </a>
+        </div>
+
+      </div>
+    </div>
+  </header>
+
+  <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/js/bootstrap.bundle.min.js"></script>
+</body>
+
+</html>

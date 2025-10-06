@@ -1,0 +1,419 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Subscribe | Vibrant India Magazine</title>
+    <link rel="icon" href="/assets/images/vim.png" type="image/x-icon">
+    
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/css/bootstrap.min.css" rel="stylesheet">
+    <link href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.2/css/all.min.css" rel="stylesheet">
+    <link href="https://unpkg.com/aos@2.3.1/dist/aos.css" rel="stylesheet">
+    
+    <style>
+        /* |--------------------------------------------------------------------------
+        | 1. THEME VARIABLES (Vibrant India Dark Theme)
+        |--------------------------------------------------------------------------
+        */
+        :root {
+            --primary-color: #e63946;    /* Vibrant Red (Main Accent, CTA, Glow) */
+            --secondary-color: #1d3557;  /* Dark Blue (Card Borders, Secondary BG) */
+            --bg-dark: #0a0a0a;          /* Deep Black/Body Background */
+            --card-bg: #1e1e1e;          /* Card/Box Background - Darker Grey */
+            --feature-bg: #141414;       /* Darkest Background for featured boxes/icons */
+            --whatsapp-green: #25d366;   /* Official WhatsApp Color */
+            --text-light: #fff;
+            --text-gray-light: rgba(241, 250, 238, 0.7);
+
+            --success-vibrant: #27ae60;
+            --warning-vibrant: #f39c12;
+            --info-vibrant: #3498db;
+        }
+
+        /* |--------------------------------------------------------------------------
+        | 2. BASE STYLES & UTILITIES
+        |--------------------------------------------------------------------------
+        */
+        body {
+            background-color: var(--bg-dark);
+            color: var(--text-light);
+            font-family: 'Poppins', sans-serif; 
+        }
+
+        /* Fix for fixed headers */
+        .main-content-push {
+            padding-top: 100px; 
+            padding-bottom: 5rem;
+        }
+
+        /* Header and Divider Styling */
+        .vibrant-glow {
+            text-shadow: 0 0 15px rgba(230, 57, 70, 0.9), 0 0 8px rgba(230, 57, 70, 0.6);
+        }
+        .vibrant-divider {
+            background: linear-gradient(to right, transparent, var(--primary-color) 30%, var(--primary-color) 70%, transparent);
+            height: 3px; 
+            border: none;
+            margin: 70px 0; 
+            opacity: 0.8;
+        }
+        .text-primary { color: var(--primary-color) !important; }
+
+        /* --- Custom Back Button Styling --- */
+        .back-button {
+            display: flex;
+            align-items: center;
+            height: 80px; /* Match header height */
+            padding-left: 20px;
+            color: var(--text-light);
+            text-decoration: none;
+            font-weight: 500;
+            transition: color 0.3s ease;
+        }
+        .back-button:hover {
+            color: var(--primary-color);
+            text-shadow: 0 0 10px rgba(230, 57, 70, 0.7);
+        }
+        .back-button i {
+            font-size: 1.5rem;
+            margin-right: 8px;
+        }
+        /* ---------------------------------- */
+
+
+        /* |--------------------------------------------------------------------------
+        | 3. FORM AND CARD DESIGN
+        |--------------------------------------------------------------------------
+        */
+
+        /* Main Form Container - Highly Attention-Grabbing */
+        .subscription-container {
+            background: var(--feature-bg); 
+            border: 3px solid var(--primary-color); 
+            padding: 3rem;
+            border-radius: 15px;
+            box-shadow: 0 0 40px rgba(230, 57, 70, 0.7); /* Intense red glow */
+        }
+        
+        /* Form Inputs and Selects (Dark Theme Matching) */
+        .form-control-dark, .form-select.form-control-dark {
+            background-color: var(--card-bg) !important;
+            border: 1px solid var(--secondary-color) !important;
+            color: var(--text-light) !important;
+            padding: 10px 15px;
+            transition: all 0.3s ease;
+        }
+
+        /* Placeholder text color */
+        .form-control-dark::placeholder {
+            color: var(--text-gray-light);
+            opacity: 0.7; 
+        }
+
+        /* Focus state (when the user clicks the field) */
+        .form-control-dark:focus, .form-select.form-control-dark:focus {
+            background-color: var(--feature-bg) !important; 
+            border-color: var(--primary-color) !important; /* Red highlight on focus */
+            box-shadow: 0 0 0 0.25rem rgba(230, 57, 70, 0.4) !important; 
+            color: var(--text-light) !important;
+        }
+
+        /* Generic Feature Box Style (used for benefits) */
+        .feature-box {
+            background: var(--card-bg) !important; 
+            border: 1px solid var(--secondary-color);
+            border-radius: 12px !important;
+            box-shadow: 0 5px 20px rgba(0, 0, 0, 0.9);
+            transition: all 0.4s cubic-bezier(0.25, 0.8, 0.25, 1);
+        }
+
+        .hover-lift:hover {
+            transform: translateY(-10px); 
+            border-color: var(--primary-color);
+            box-shadow: 0 20px 40px rgba(0, 0, 0, 0.8), 0 0 20px rgba(230, 57, 70, 0.9);
+        }
+
+        /* Icon Styling */
+        .icon-circle {
+            width: 70px;
+            height: 70px;
+            border-radius: 50%;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            background-color: var(--card-bg) !important;
+            box-shadow: 0 0 15px rgba(230, 57, 70, 0.5);
+        }
+        .icon-circle i {
+            font-size: 2rem;
+            color: var(--primary-color);
+            filter: drop-shadow(0 0 5px rgba(230, 57, 70, 1));
+        }
+
+
+        /* |--------------------------------------------------------------------------
+        | 4. CALL-TO-ACTION (CTA) BUTTONS
+        |--------------------------------------------------------------------------
+        */
+
+        /* Form Submission Button (Primary Red) */
+        .btn-cta-main {
+            background-color: var(--primary-color) !important;
+            color: var(--text-light) !important;
+            font-weight: bold;
+            text-transform: uppercase;
+            padding: 15px 40px;
+            transition: all 0.3s ease;
+            box-shadow: 0 6px 15px rgba(230, 57, 70, 0.6);
+            border: 2px solid var(--primary-color);
+        }
+        .btn-cta-main:hover {
+            background-color: #ff5e6c !important; 
+            transform: translateY(-4px); 
+            box-shadow: 0 12px 25px rgba(230, 57, 70, 1) !important;
+        }
+
+        /* WhatsApp Button (Official Green) */
+        .btn-whatsapp {
+            background-color: var(--whatsapp-green) !important;
+            color: var(--text-light) !important;
+            font-weight: bold;
+            font-size: 1.2rem;
+            padding: 18px 45px;
+            border: 3px solid var(--whatsapp-green);
+            box-shadow: 0 8px 20px rgba(37, 211, 102, 0.7);
+            transition: all 0.3s ease;
+            text-transform: uppercase;
+        }
+
+        .btn-whatsapp:hover {
+            background-color: #128c7e !important; 
+            transform: translateY(-5px) scale(1.02);
+            border-color: #128c7e;
+            box-shadow: 0 15px 30px rgba(37, 211, 102, 1);
+        }
+
+        /* |--------------------------------------------------------------------------
+        | 5. RESPONSIVE DESIGN ADJUSTMENTS
+        |--------------------------------------------------------------------------
+        */
+        @media (max-width: 991px) {
+            .subscription-container {
+                padding: 2rem;
+            }
+        }
+
+        @media (max-width: 767px) {
+            .main-content-push {
+                padding-top: 80px;
+            }
+            .subscription-container {
+                padding: 1.5rem;
+            }
+            .btn-whatsapp {
+                width: 100%;
+                font-size: 1.1rem;
+            }
+            .btn-cta-main {
+                width: 100%;
+                font-size: 1.1rem;
+            }
+            .col-md-6 {
+                margin-bottom: 0.5rem; 
+            }
+            .row.g-4 {
+                gap: 1.5rem !important;
+            }
+        }
+    </style>
+    
+    <script>
+        function createWhatsAppLink() {
+            // !!! IMPORTANT: REPLACE THIS with your official WhatsApp number (e.g., "919876543210") !!!
+            const whatsappNumber = "919876543210"; 
+            
+            // Pre-filled message for subscriptions/inquiries
+            const message = "Hello Vibrant India Magazine Team, I am inquiring about an annual subscription from the website. Please provide payment and mailing details.";
+            
+            const encodedMessage = encodeURIComponent(message);
+            
+            // Determine the correct WhatsApp URL based on device
+            let whatsappURL = "";
+            if (/Mobi|Android/i.test(navigator.userAgent)) {
+                whatsappURL = `https://wa.me/${whatsappNumber}?text=${encodedMessage}`; // Mobile (opens app)
+            } else {
+                whatsappURL = `https://web.whatsapp.com/send?phone=${whatsappNumber}&text=${encodedMessage}`; // Desktop (opens web client)
+            }
+            
+            // Apply the dynamic URL to the button
+            document.getElementById('whatsappCta').href = whatsappURL;
+        }
+    </script>
+</head>
+
+<body onload="AOS.init({duration: 800, once: true}); createWhatsAppLink();">
+
+    <header id="header-nav" style="position: fixed; top: 0; width: 100%; height: 80px; background-color: rgba(10, 10, 10, 0.95); z-index: 1000; border-bottom: 1px solid var(--primary-color);">
+        <a href="javascript:history.back()" class="back-button">
+            <i class="fa-solid fa-arrow-left"></i>
+            <span class="d-none d-sm-inline">Back</span>
+        </a>
+    </header>
+
+    <main class="container main-content-push">
+        
+        <h1 class="text-center fw-bold display-4 text-light vibrant-glow mb-3" data-aos="fade-down">📥 Subscribe to Vibrant India Magazine</h1>
+        <p class="lead w-75 mx-auto text-gray-light text-center mb-5" data-aos="fade-down" data-aos-delay="200">
+            Unlock your competitive edge with India's most trusted trade journal. Fill out the form below to initiate your annual subscription and receive our next quarterly issue.
+        </p>
+
+        <section class="row justify-content-center mb-5">
+            <div class="col-lg-10" data-aos="zoom-in" data-aos-delay="300">
+                <div class="subscription-container">
+                    
+                    <div class="icon-circle mx-auto mb-4" style="width: 80px; height: 80px;">
+                        <i class="fa-solid fa-file-signature fa-2x text-primary"></i>
+                    </div>
+
+                    <h2 class="fw-bold text-light text-center mb-4">Subscription Request Form</h2>
+                    
+                    <form id="subscriptionForm" class="row g-4">
+    
+    <div class="col-md-6">
+        <label for="fullName" class="form-label text-light fw-semibold">Full Name <span class="text-primary">*</span></label>
+        <input type="text" class="form-control form-control-dark" id="fullName" name="fullName" placeholder="Enter your full name" required>
+    </div>
+    <div class="col-md-6">
+        <label for="companyName" class="form-label text-light fw-semibold">Company Name <span class="text-primary">*</span></label>
+        <input type="text" class="form-control form-control-dark" id="companyName" name="companyName" placeholder="Your business or firm name" required>
+    </div>
+
+    <div class="col-md-6">
+        <label for="emailAddress" class="form-label text-light fw-semibold">Email Address <span class="text-primary">*</span></label>
+        <input type="email" class="form-control form-control-dark" id="emailAddress" name="emailAddress" placeholder="you@company.com" required>
+    </div>
+    <div class="col-md-6">
+        <label for="phoneNumber" class="form-label text-light fw-semibold">Phone/Mobile Number <span class="text-primary">*</span></label>
+        <input type="tel" class="form-control form-control-dark" id="phoneNumber" name="phoneNumber" placeholder="+91 XXXX XXXXX" required>
+    </div>
+
+    <div class="col-md-12">
+        <label for="industryRole" class="form-label text-light fw-semibold">Your Primary Role / Industry Segment</label>
+        <select id="industryRole" name="industryRole" class="form-select form-control-dark">
+            <option selected value="">Select your role...</option>
+            <option value="Manufacturer">Manufacturer / Producer</option>
+            <option value="ExporterImporter">Exporter / Importer</option>
+            <option value="WholesaleDistributor">Wholesaler / Distributor</option>
+            <option value="Retailer">Retailer / Dealer</option>
+            <option value="CorporateBuyer">Corporate / Institutional Buyer</option>
+            <option value="Other">Other Industry Professional</option>
+        </select>
+    </div>
+
+    <div class="col-12 text-center mt-4">
+        <button type="submit" class="btn btn-cta-main btn-lg px-5 shadow-lg">
+            <i class="fa-solid fa-paper-plane me-2"></i> Submit Subscription Request
+        </button>
+    </div>
+</form>
+
+
+                </div>
+            </div>
+        </section>
+
+        <hr class="vibrant-divider">
+
+        <section class="container py-4">
+            <h2 class="text-center fw-bold text-light mb-5" data-aos="fade-up">Why You Need a VIM Subscription</h2>
+            
+            <div class="row g-4 justify-content-center">
+                
+                <div class="col-md-6 col-lg-4" data-aos="fade-up" data-aos-delay="100">
+                    <div class="card feature-box hover-lift h-100 p-3">
+                        <div class="card-body">
+                            <h5 class="fw-semibold text-primary mb-2"><i class="fa-solid fa-chart-line me-2"></i> Market Edge</h5>
+                            <p class="text-white">Receive exclusive reports on raw material costs, consumer demand shifts, and upcoming regulatory changes before your competitors do.</p>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="col-md-6 col-lg-4" data-aos="fade-up" data-aos-delay="200">
+                    <div class="card feature-box hover-lift h-100 p-3">
+                        <div class="card-body">
+                            <h5 class="fw-semibold text-primary mb-2"><i class="fa-solid fa-industry me-2"></i> B2B Network</h5>
+                            <p class="text-white">Stay connected to India's most important manufacturers, dealers, and importers through our featured profiles and industry news.</p>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="col-md-12 col-lg-4" data-aos="fade-up" data-aos-delay="300">
+                    <div class="card feature-box hover-lift h-100 p-3">
+                        <div class="card-body">
+                            <h5 class="fw-semibold text-primary mb-2"><i class="fa-solid fa-truck-fast me-2"></i> Exhibition Access</h5>
+                            <p class="text-white">Get priority updates and free passes to major Houseware trade shows and exhibitions where Vibrant India Magazine is the official media partner.</p>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <hr class="vibrant-divider">
+
+        <section class="text-center py-4" data-aos="fade-up">
+            <h3 class="fw-bold text-light mb-3">Or Need Instant Support?</h3>
+            <p class="text-white mb-4 w-75 mx-auto">
+                Bypass the form and connect directly with our team for rapid pricing inquiries, custom orders, or any immediate questions.
+            </p>
+            
+            <a href="#" id="whatsappCta" target="_blank" class="btn btn-whatsapp rounded-pill shadow-lg mb-4">
+                <i class="fab fa-whatsapp me-3"></i> **Chat Instantly via WhatsApp**
+            </a>
+        </section>
+
+    </main>
+    <script src="https://unpkg.com/aos@2.3.1/dist/aos.js"></script>
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/js/bootstrap.bundle.min.js"></script>
+<script>
+    const whatsappNumber = "918511172099"; // Your WhatsApp number with country code
+
+    // Function to send form data via WhatsApp
+    document.getElementById('subscriptionForm').addEventListener('submit', function(e) {
+        e.preventDefault(); // Prevent default form submission
+
+        const name = document.getElementById('fullName').value;
+        const company = document.getElementById('companyName').value;
+        const email = document.getElementById('emailAddress').value;
+        const phone = document.getElementById('phoneNumber').value;
+        const role = document.getElementById('industryRole').value || "Not specified";
+
+        const message = `
+Hello Vibrant India Magazine Team,
+I would like to subscribe. Here are my details:
+
+Name: ${name}
+Company: ${company}
+Email: ${email}
+Phone: ${phone}
+Role/Industry: ${role}
+        `;
+
+        const encodedMessage = encodeURIComponent(message);
+        const whatsappURL = /Mobi|Android/i.test(navigator.userAgent) 
+            ? `https://wa.me/${whatsappNumber}?text=${encodedMessage}` 
+            : `https://web.whatsapp.com/send?phone=${whatsappNumber}&text=${encodedMessage}`;
+
+        // Open WhatsApp
+        window.open(whatsappURL, '_blank');
+    });
+
+    // WhatsApp button click (instant chat)
+    const whatsappBtn = document.getElementById('whatsappCta');
+    const instantMessage = encodeURIComponent("Hello Vibrant India Magazine Team, I need instant support regarding subscription.");
+    whatsappBtn.href = /Mobi|Android/i.test(navigator.userAgent) 
+        ? `https://wa.me/${whatsappNumber}?text=${instantMessage}` 
+        : `https://web.whatsapp.com/send?phone=${whatsappNumber}&text=${instantMessage}`;
+</script>
+
+</body>
+</html>

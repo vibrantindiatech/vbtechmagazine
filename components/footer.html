@@ -1,0 +1,243 @@
+<footer class="footer pt-5 pb-4">
+  <div class="container">
+    <div class="row gy-5 align-items-start">
+
+      <!-- Brand Text & Slogan -->
+      <div class="col-lg-5 col-md-12 footer-brand-col text-start text-lg-start text-center">
+        <h5 class="fw-bold mb-3 brand-title steel-text"><a href="/index.html">Vibrant INDIA MAGAZINE</a></h5>
+        <p class="small text-gray-light brand-slogan">
+          Your trusted source for industry insights, market news, and innovations shaping the future of Indian houseware, kitchenware, and stainless steel.
+        </p>
+        <a href="subscribe.html" class="btn btn-outline-steel mt-3">
+          <i class="fa-solid fa-envelope me-2"></i> Get the Latest Edition
+        </a>
+      </div>
+
+      <!-- Quick Links -->
+      <div class="col-lg-3 col-md-6">
+        <h6 class="fw-bold mb-3 steel-accent footer-heading">Quick Links</h6>
+        <ul class="list-unstyled footer-links-list">
+          <li><a href="/pages/about/aboutmagazine.html" class="footer-link">About Us</a></li>
+          <li><a href="/pages/Industry/industrynews.html" class="footer-link">Industry News & Trends</a></li>
+          <li><a href="/pages/features/articles.html" class="footer-link">Featured Articles</a></li>
+          <li><a href="/pages/Advertise/mediakit.html" class="footer-link">Media Kit & Advertising</a></li>
+        </ul>
+      </div>
+
+      <!-- Contact & Social -->
+      <div class="col-lg-4 col-md-6">
+        <h6 class="fw-bold mb-3 steel-accent footer-heading">Connect</h6>
+        <p class="mb-2 text-gray-light connect"><i class="fa-solid fa-envelope me-2 steel-accent"></i> info@vibrantindiafair.com</p>
+        <p class="mb-3 text-gray-light connect"><i class="fa-solid fa-phone me-2 steel-accent"></i> +91 9924488938</p>
+        <p class="mb-3 text-gray-light connect"><i class="fa-solid fa-location-dot me-2 steel-accent"></i> 515, Fifth Floor, HillTown Impressa, Ahmedabad, Gujarat-380049</p>
+
+        <div class="socialmedia mt-4">
+          <a href="https://www.facebook.com/vibrant.india.94/" class="footer-social" aria-label="Facebook"><i class="fab fa-facebook-f"></i></a>
+          <a href="https://in.linkedin.com/company/vibrant-india-tech" class="footer-social" aria-label="LinkedIn"><i class="fab fa-linkedin-in"></i></a>
+          <a href="https://www.instagram.com/vibrantindiatech/" class="footer-social" aria-label="Instagram"><i class="fab fa-instagram"></i></a>
+          <a href="#" class="footer-social" aria-label="Twitter"><i class="fab fa-twitter"></i></a>
+        </div>
+      </div>
+    </div>
+
+    <hr class="mt-5 mb-3 footer-divider" />
+    <p class="text-center small mb-0 text-gray-light footer-copyright">
+      &copy; 2025 Vibrant India Magazine. All rights reserved. | 
+      <a href="/pages/legal/privacy.html" class="text-gray-light">Privacy Policy</a>
+      <span class="mx-2">|</span>
+      <a href="/pages/legal/terms.html" class="text-gray-light">Terms of Use</a>
+    </p>
+  </div>
+</footer>
+
+<style>
+  :root {
+    --steel-gradient: linear-gradient(135deg, #a0a0a0, #c0c0c0, #d7d7d7, #a0a0a0);
+    --footer-bg: #121212;
+    --text-light: #e0e0e0;
+    --text-gray-light: rgba(224, 224, 224, 0.7);
+    --steel-accent-color: #a0a0a0;
+    --btn-border: #a0a0a0;
+    --btn-hover-bg: #c4c4c4;
+  }
+
+  .footer {
+    background-color: var(--footer-bg);
+    color: var(--text-light);
+    border-top: 3px solid var(--steel-accent-color);
+    font-family: 'Playfair Display', serif;
+  }
+
+  /* Brand Text Steel Effect & Uppercase */
+  .brand-title {
+    font-size: 1.8rem;
+    font-weight: 900;
+    background: var(--steel-gradient);
+    background-clip: text;
+    -webkit-background-clip: text;
+    -webkit-text-fill-color: transparent;
+    color: transparent;
+    user-select: none;
+    text-transform: uppercase;
+    letter-spacing: 0.1em;
+  }
+
+  .brand-slogan {
+    font-size: 0.9rem;
+    max-width: 420px;
+    margin: 0 auto 0.75rem auto;
+    color: var(--text-gray-light);
+  }
+
+  /* Button with steel outline and improved hover */
+  .btn-outline-steel {
+    color: var(--text-light);
+    border: 2px solid var(--btn-border);
+    background: transparent;
+    border-radius: 8px;
+    padding: 10px 20px;
+    font-weight: 700;
+    transition: all 0.4s ease;
+    display: inline-flex;
+    align-items: center;
+    gap: 8px;
+    cursor: pointer;
+    box-shadow: inset 0 0 0 0 var(--btn-border);
+  }
+  .btn-outline-steel:hover,
+  .btn-outline-steel:focus {
+    background: var(--btn-hover-bg);
+    color: #121212!important;
+    border-color: var(--btn-border);
+    box-shadow: 0 0 12px var(--btn-border);
+    text-decoration: none!important;
+  }
+  .btn-outline-steel i {
+    transition: transform 0.3s ease;
+  }
+  .btn-outline-steel:hover i {
+    transform: translateX(4px);
+  }
+
+  /* Footer Headings */
+  .footer-heading {
+    font-size: 1.1rem;
+    color: var(--steel-accent-color);
+    border-bottom: 2px solid #555;
+    padding-bottom: 5px;
+    margin-bottom: 15px !important;
+    font-weight: 700;
+  }
+
+  /* Links */
+  .footer-link {
+    color: var(--text-gray-light);
+    text-decoration: none!important;
+    padding: 6px 0;
+    display: inline-block;
+    font-size: 1rem;
+    transition: color 0.25s ease, transform 0.3s ease;
+    position: relative;
+  }
+  .footer-link:hover,
+  .footer-link:focus {
+    color: var(--steel-accent-color);
+    transform: translateX(6px);
+    outline: none;
+  }
+  .footer-link::before {
+    content: '•';
+    color: var(--steel-accent-color);
+    position: absolute;
+    left: -18px;
+    opacity: 0;
+    transition: opacity 0.25s ease;
+  }
+  .footer-link:hover::before,
+  .footer-link:focus::before {
+    opacity: 1;
+  }
+  .footer-links-list {
+    padding-left: 15px;
+  }
+
+  /* Contact icons */
+  .connect i {
+    min-width: 20px;
+    color: var(--steel-accent-color);
+  }
+
+  /* Social Icons with smooth hover and glow */
+  .footer-social {
+    display: inline-flex;
+    align-items: center;
+    justify-content: center;
+    width: 44px;
+    height: 44px;
+    margin-right: 12px;
+    border-radius: 50%;
+    background-color: #2c2c2c;
+    color: var(--steel-accent-color);
+    font-size: 1.3rem;
+    transition: 
+      background-color 0.3s ease, 
+      color 0.3s ease,
+      transform 0.3s ease,
+      box-shadow 0.35s ease;
+    cursor: pointer;
+  }
+  .footer-social:hover,
+  .footer-social:focus {
+    background: var(--steel-gradient);
+    color: #121212!important;
+    transform: translateY(-4px) scale(1.15);
+    box-shadow: 0 0 14px var(--steel-accent-color);
+    outline: none;
+  }
+
+  /* Divider */
+  .footer-divider {
+    background: linear-gradient(to right, transparent, var(--steel-accent-color), transparent);
+    height: 1.5px;
+    border: none;
+    opacity: 0.7;
+  }
+
+  /* Copyright */
+  .footer a {
+    color: var(--text-gray-light);
+    text-decoration: none;
+    transition: color 0.3s ease;
+  }
+  .footer a:hover,
+  .footer a:focus {
+    color: var(--steel-accent-color);
+    text-decoration: underline;
+    outline: none;
+  }
+
+  /* Responsive */
+  @media (max-width: 767.98px) {
+    .footer-brand-col {
+      text-align: center !important;
+    }
+    .brand-slogan {
+      max-width: 100%;
+      margin: 0 auto 1rem;
+    }
+    .footer-links-list {
+      padding-left: 0;
+      text-align: center;
+    }
+    .footer-link {
+      padding-left: 0;
+    }
+    .footer-link::before {
+      display: none;
+    }
+    .socialmedia {
+      text-align: center;
+      margin-top: 1rem;
+    }
+  }
+</style>

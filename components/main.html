@@ -1,0 +1,225 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Vibrant India Magazine</title>
+<link href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.0/css/all.min.css" rel="stylesheet">
+<style>
+:root {
+--primary-color: #e63946;
+--secondary-color: #1d3557;
+--bg-dark: #111;
+--text-light: #fff;
+}
+body {margin:0; font-family: Arial, sans-serif; background:#111; color:#fff;}
+
+/* --- HERO --- */
+.hero-section {
+height: 100vh;
+background: var(--secondary-color) url('assets/images/vimbg.png') center/cover no-repeat;
+color: var(--text-light);
+position: relative;
+display: flex;
+align-items: center;
+overflow: hidden;
+border-bottom: 5px solid var(--primary-color);
+}
+.hero-section::before {
+content:""; position:absolute; inset:0;
+background: rgba(0,0,0,0.45); z-index:1;
+}
+.hero-content {position:relative; z-index:2; padding-top:80px; padding-bottom:50px;}
+.hero-content h1 {font-size:4rem; font-weight:900; line-height:1.05; text-transform:uppercase; text-shadow:0 0 15px rgba(230,57,70,0.6);}
+.hero-content .lead {font-size:1.25rem; max-width:600px; margin:1.5rem 0 3rem; opacity:0.85; border-left:3px solid var(--primary-color); padding-left:15px;}
+.btn-primary-custom {background: var(--primary-color); border:none; padding:12px 35px; font-weight:700; text-transform:uppercase; letter-spacing:1px; color:#fff; cursor:pointer; transition: all 0.3s ease; border-radius: 8px;}
+.btn-primary-custom:hover {background:#ff5e6c; transform: translateY(-2px);}
+.btn-outline-light {color: var(--text-light); border: 2px solid rgba(255,255,255,0.6); transition: all 0.3s ease;}
+.btn-outline-light:hover {background: rgba(255,255,255,0.1); border-color: var(--primary-color);}
+
+/* --- STATS --- */
+.stats-container {background: linear-gradient(90deg, var(--secondary-color) 0%, #172a44 100%); padding: 40px 0;}
+.stat-item {border-right:1px solid rgba(255,255,255,0.15); padding:15px;}
+.stat-item:last-child {border-right:none;}
+
+/* --- HIGHLIGHTS --- */
+.highlights-section {padding:80px 20px; background:var(--bg-dark);}
+.highlight-card {background:#1e1e1e; padding:40px 30px; border-radius:20px; text-align:center; border:1px solid rgba(255,255,255,0.1); transition: all 0.4s ease; position: relative;}
+.highlight-card:hover {background:#252525; transform:translateY(-10px); box-shadow:0 15px 30px rgba(0,0,0,0.6);}
+.highlight-card i {font-size:3rem; color:var(--primary-color); margin-bottom:20px;}
+
+/* --- LATEST EDITIONS --- */
+.latest-issue {padding:100px 20px; background:#191919;}
+.edition-card {
+position: relative;
+background: linear-gradient(145deg, #1b1b1b, #2a2a2a);
+box-shadow:0 15px 30px rgba(0,0,0,0.7);
+border-radius:25px;
+padding:25px;
+transition: transform 0.4s, box-shadow 0.4s;
+}
+.edition-card:hover {transform: translateY(-8px) scale(1.02); box-shadow:0 20px 40px rgba(0,0,0,0.8);}
+.edition-card img {width:100%; border-radius:15px; margin-bottom:15px;}
+.edition-card h3 {margin-top:10px; color:#fff;}
+.edition-card p {color:#ccc;}
+.edition-card ul {list-style:none; padding-left:0; color:#ddd;}
+.edition-card ul li {margin-bottom:8px;}
+.edition-card .badge {position:absolute; top:15px; right:15px; background:#ff4c60; color:#fff; font-weight:700; padding:8px 18px; border-radius:25px; text-transform:uppercase; box-shadow:0 4px 12px rgba(0,0,0,0.5);}
+
+/* --- SUBSCRIPTIONS --- */
+.subscription-section {background:#101010; padding:100px 20px; border-top:5px solid var(--primary-color); border-bottom:5px solid var(--primary-color);}
+.subscription-card {background:#1e1e1e; border-radius:20px; padding:40px 30px; text-align:center; border:1px solid rgba(255,255,255,0.05); transition: all 0.4s ease; color: var(--text-light); position: relative; margin-bottom:20px; height: 100%;}
+.subscription-card:hover {transform: translateY(-10px); box-shadow:0 20px 40px rgba(0,0,0,0.6);}
+.subscription-card h3 {color: var(--primary-color);}
+.subscription-price {font-size:2rem; font-weight:bold; margin-bottom:20px;}
+.best-value {position:absolute; top:-12px; right:-12px; background:var(--primary-color); color:#fff; font-size:0.8rem; font-weight:bold; padding:6px 12px; border-radius:20px;}
+
+/* --- CTA --- */
+.cta-section {padding:80px 20px; background:linear-gradient(135deg, var(--secondary-color) 0%, #0d1a2b 100%); text-align:center; color:#fff;}
+
+/* --- Responsive --- */
+@media (max-width:992px){.edition-card {margin-bottom:20px;}}
+@media (max-width:768px){
+.hero-section {height:auto; padding:80px 20px;}
+.hero-content h1 {font-size:2.5rem;}
+.hero-content .lead {font-size:1rem;}
+.btn-primary-custom, .btn-outline-light {width:100%; margin-bottom:10px;}
+.stat-item {border:none; border-bottom:1px solid rgba(255,255,255,0.15);}
+}
+</style>
+</head>
+<body>
+
+<section class="hero-section">
+<div class="hero-content container text-start">
+<h1><span style="font-size:0.5em;display:block;font-weight:300;opacity:0.7;">The definitive guide to</span>INDUSTRY REVOLUTION</h1>
+<p class="lead">Connecting the <strong>Houseware, Hotelware, Kitchenware, and Stainless Steel</strong> markets with insights, trends, and global perspectives.</p>
+<div class="d-grid gap-3 d-sm-flex justify-content-start">
+<a href="#latest-issue-section" class="btn btn-primary-custom btn-lg shadow-lg"><i class="fa-solid fa-bolt me-2"></i> Explore the Latest Issue</a>
+<a href="#subscribe" class="btn btn-outline-light btn-lg"><i class="fa-solid fa-star me-2"></i> Subscribe Now</a>
+</div>
+</div>
+</section>
+
+<section class="container-fluid stats-container py-5">
+<div class="container text-center">
+<div class="row g-4 justify-content-center">
+<div class="col-6 col-md-3 stat-item"><h2 class="display-5 fw-bold mb-0 stat-count text-white" data-target="15">15</h2><p class="text-light opacity-75">Years Published</p></div>
+<div class="col-6 col-md-3 stat-item"><h2 class="display-5 fw-bold mb-0 stat-count text-white" data-target="25000">25,000</h2><p class="text-light opacity-75">Global Readership</p></div>
+<div class="col-6 col-md-3 stat-item"><h2 class="display-5 fw-bold mb-0 stat-count text-white" data-target="4">4</h2><p class="text-light opacity-75">Major Industries</p></div>
+<div class="col-6 col-md-3 stat-item"><h2 class="display-5 fw-bold mb-0 stat-count text-white" data-target="100">100</h2><p class="text-light opacity-75">Premium Brands</p></div>
+</div>
+</div>
+</section>
+
+<section class="container-fluid highlights-section">
+<h2 class="text-center text-light mb-5">Our Core Strengths</h2>
+<div class="row g-4">
+<div class="col-md-4"><div class="highlight-card"><i class="fa-solid fa-calendar-check"></i><h5 class="fw-bold text-white">15+ Years Expertise</h5><p class="text-white-50">Trusted voice in hospitality and houseware sectors.</p></div></div>
+<div class="col-md-4"><div class="highlight-card"><i class="fa-solid fa-globe"></i><h5 class="fw-bold text-white">Global Distribution</h5><p class="text-white-50">Reaching 25,000+ professionals worldwide.</p></div></div>
+<div class="col-md-4"><div class="highlight-card"><i class="fa-solid fa-chart-line"></i><h5 class="fw-bold text-white">Market Intelligence</h5><p class="text-white-50">Exclusive reports and interviews driving growth.</p></div></div>
+</div>
+</section>
+
+<section class="container latest-issue" id="latest-issue-section">
+<h2 class="text-center mb-5 text-primary fw-bold">The Latest Editions</h2>
+<div class="row g-4 justify-content-center">
+<div class="col-lg-6 col-md-10">
+<div class="edition-card">
+<span class="badge">Now Available</span>
+<img src="assets/images/current.png" alt="September 2025 Edition">
+<h3>September 2025 Edition</h3>
+<p>Deep dive into sustainable steel, export opportunities, and India's kitchen innovators.</p>
+<ul>
+<li><i class="fa-solid fa-check" style="color: var(--primary-color); margin-right:8px;"></i>Sustainable Design Focus</li>
+<li><i class="fa-solid fa-check" style="color: var(--primary-color); margin-right:8px;"></i>Exclusive CEO Interview</li>
+<li><i class="fa-solid fa-check" style="color: var(--primary-color); margin-right:8px;"></i>Vibrant India Fair Report</li>
+</ul>
+<a href="#" class="btn btn-primary-custom mt-2"><i class="fa-solid fa-book-open me-2"></i> Read Digital Copy</a>
+</div>
+</div>
+<div class="col-lg-6 col-md-10">
+<div class="edition-card">
+<span class="badge">Now Available</span>
+<img src="/assets/images/ss.png" alt="October 2025 Edition">
+<h3>October 2025 Edition</h3>
+<p>Insights on next-gen kitchenware, hotelware trends, and market intelligence.</p>
+<ul>
+<li><i class="fa-solid fa-check" style="color: var(--primary-color); margin-right:8px;"></i>Innovative Product Spotlight</li>
+<li><i class="fa-solid fa-check" style="color: var(--primary-color); margin-right:8px;"></i>Expert Panel Interview</li>
+<li><i class="fa-solid fa-check" style="color: var(--primary-color); margin-right:8px;"></i>Industry Event Highlights</li>
+</ul>
+<a href="#" class="btn btn-primary-custom mt-2"><i class="fa-solid fa-book-open me-2"></i> Read Digital Copy</a>
+</div>
+</div>
+</div>
+</section>
+
+<section class="subscription-section" id="subscribe">
+    <div class="container">
+        <h2 class="text-center text-primary fw-bold mb-5">Choose Your Subscription</h2>
+        <div class="row g-4 justify-content-center">
+
+            <div class="col-md-4">
+                <div class="subscription-card">
+                    <h3>6 Months</h3>
+                    <div class="subscription-price">₹1000</div>
+                    <p>6 issues + premium insights.</p>
+                </div>
+            </div>
+
+            <div class="col-md-4">
+                <div class="subscription-card">
+                    <span class="best-value">Best Value</span>
+                    <h3>12 Months</h3>
+                    <div class="subscription-price">₹2000</div>
+                    <p>12 issues + annual industry report.</p>
+                </div>
+            </div>
+
+            <div class="col-md-4">
+                <div class="subscription-card">
+                    <h3>Lifetime</h3>
+                    <div class="subscription-price">₹7350</div>
+                    <p>Unlimited access + VIP perks forever.</p>
+                </div>
+            </div>
+            
+            <div class="col-12 text-center mt-5">
+                <p class="lead">Ready to proceed? Click below to select your plan and finalize your order.</p>
+                <a href="subscribe-form.html" class="btn btn-primary-custom btn-lg shadow-lg">
+                    <i class="fa-solid fa-star me-2"></i> Select Plan & Subscribe Now
+                </a>
+            </div>
+
+        </div>
+    </div>
+</section>
+
+<section class="cta-section">
+<div class="container">
+<h2 class="fw-bold text-primary">Be Part of the Future</h2>
+<p>Join thousands shaping the future of <strong>Houseware, Hotelware, Kitchenware, and Stainless Steel</strong>.</p>
+<a href="#subscribe" class="btn btn-primary-custom btn-lg mt-3"><i class="fa-solid fa-newspaper me-2"></i> Subscribe Today</a>
+</div>
+</section>
+
+<script>
+    document.addEventListener('DOMContentLoaded', function() {
+        // Ensure smooth scroll for all anchor links pointing to #subscribe
+        const subscribeLink = document.querySelector('a[href="#subscribe"]');
+        if (subscribeLink) {
+            subscribeLink.addEventListener('click', function(e) {
+                e.preventDefault();
+                const target = document.getElementById('subscribe');
+                if (target) {
+                    // Use optional chaining for modern browsers, or a simple check
+                    target.scrollIntoView({ behavior: 'smooth' });
+                }
+            });
+        }
+    });
+</script>
+
+</body>
+</html>
