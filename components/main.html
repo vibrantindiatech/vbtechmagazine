@@ -122,38 +122,91 @@ transition: transform 0.4s, box-shadow 0.4s;
 </section>
 
 <section class="container latest-issue" id="latest-issue-section">
-<h2 class="text-center mb-5 text-primary fw-bold">The Latest Editions</h2>
-<div class="row g-4 justify-content-center">
-<div class="col-lg-6 col-md-10">
-<div class="edition-card">
-<span class="badge">Now Available</span>
-<img src="assets/images/current.png" alt="September 2025 Edition">
-<h3>September 2025 Edition</h3>
-<p>Deep dive into sustainable steel, export opportunities, and India's kitchen innovators.</p>
-<ul>
-<li><i class="fa-solid fa-check" style="color: var(--primary-color); margin-right:8px;"></i>Sustainable Design Focus</li>
-<li><i class="fa-solid fa-check" style="color: var(--primary-color); margin-right:8px;"></i>Exclusive CEO Interview</li>
-<li><i class="fa-solid fa-check" style="color: var(--primary-color); margin-right:8px;"></i>Vibrant India Fair Report</li>
-</ul>
-<a href="#" class="btn btn-primary-custom mt-2"><i class="fa-solid fa-book-open me-2"></i> Read Digital Copy</a>
-</div>
-</div>
-<div class="col-lg-6 col-md-10">
-<div class="edition-card">
-<span class="badge">Now Available</span>
-<img src="/assets/images/ss.png" alt="October 2025 Edition">
-<h3>October 2025 Edition</h3>
-<p>Insights on next-gen kitchenware, hotelware trends, and market intelligence.</p>
-<ul>
-<li><i class="fa-solid fa-check" style="color: var(--primary-color); margin-right:8px;"></i>Innovative Product Spotlight</li>
-<li><i class="fa-solid fa-check" style="color: var(--primary-color); margin-right:8px;"></i>Expert Panel Interview</li>
-<li><i class="fa-solid fa-check" style="color: var(--primary-color); margin-right:8px;"></i>Industry Event Highlights</li>
-</ul>
-<a href="#" class="btn btn-primary-custom mt-2"><i class="fa-solid fa-book-open me-2"></i> Read Digital Copy</a>
-</div>
-</div>
-</div>
+    <h2 class="text-center mb-5 text-primary fw-bold">The Latest Editions</h2>
+    <div class="row g-4 justify-content-center">
+
+        <!-- September 2025 Edition -->
+        <div class="col-lg-6 col-md-10">
+            <div class="edition-card">
+                <span class="badge">Now Available</span>
+                <img src="assets/images/current.png" alt="September 2025 Edition">
+                <h3>September 2025 Edition</h3>
+                <p>Deep dive into sustainable steel, export opportunities, and India's kitchen innovators.</p>
+                <ul>
+                    <li><i class="fa-solid fa-check" style="color: var(--primary-color); margin-right:8px;"></i>Sustainable Design Focus</li>
+                    <li><i class="fa-solid fa-check" style="color: var(--primary-color); margin-right:8px;"></i>Exclusive CEO Interview</li>
+                    <li><i class="fa-solid fa-check" style="color: var(--primary-color); margin-right:8px;"></i>Vibrant India Fair Report</li>
+                </ul>
+                <!-- Open PDF in Modal -->
+                <a href="#" class="btn btn-primary-custom mt-2" data-bs-toggle="modal" data-bs-target="#pdfModal1">
+                    <i class="fa-solid fa-book-open me-2"></i> Read Digital Copy
+                </a>
+            </div>
+        </div>
+
+        <!-- October 2025 Edition -->
+        <div class="col-lg-6 col-md-10">
+            <div class="edition-card">
+                <span class="badge">Now Available</span>
+                <img src="assets/images/ss.png" alt="October 2025 Edition">
+                <h3>October 2025 Edition</h3>
+                <p>Insights on next-gen kitchenware, hotelware trends, and market intelligence.</p>
+                <ul>
+                    <li><i class="fa-solid fa-check" style="color: var(--primary-color); margin-right:8px;"></i>Innovative Product Spotlight</li>
+                    <li><i class="fa-solid fa-check" style="color: var(--primary-color); margin-right:8px;"></i>Expert Panel Interview</li>
+                    <li><i class="fa-solid fa-check" style="color: var(--primary-color); margin-right:8px;"></i>Industry Event Highlights</li>
+                </ul>
+                <!-- Open PDF in Modal -->
+                <a href="#" class="btn btn-primary-custom mt-2" data-bs-toggle="modal" data-bs-target="#pdfModal2">
+                    <i class="fa-solid fa-book-open me-2"></i> Read Digital Copy
+                </a>
+            </div>
+        </div>
+
+    </div>
 </section>
+
+<!-- PDF MODALS -->
+<!-- September 2025 -->
+<div class="modal fade" id="pdfModal1" tabindex="-1" aria-hidden="true">
+  <div class="modal-dialog modal-xl modal-dialog-centered">
+    <div class="modal-content bg-dark">
+      <div class="modal-header border-0">
+        <h5 class="modal-title text-light">January 2025 Edition</h5>
+        <button type="button" class="btn-close btn-close-white" data-bs-dismiss="modal"></button>
+      </div>
+      <div class="modal-body p-0">
+       <iframe src="../assets/magazine/jan2025.pdf#view=FitH&spread=odd" 
+        width="100%" height="600px" style="border:none;"></iframe>
+
+      </div>
+    </div>
+  </div>
+</div>
+
+<!-- October 2025 -->
+<div class="modal fade" id="pdfModal2" tabindex="-1" aria-hidden="true">
+  <div class="modal-dialog modal-xl modal-dialog-centered">
+    <div class="modal-content bg-dark">
+      <div class="modal-header border-0">
+        <h5 class="modal-title text-light">October 2024 Edition</h5>
+        <button type="button" class="btn-close btn-close-white" data-bs-dismiss="modal"></button>
+      </div>
+      <div class="modal-body p-0">
+        <iframe src="../assets/magazine/oct2024.pdf" width="100%" height="600px" style="border:none;"></iframe>
+      </div>
+    </div>
+  </div>
+</div>
+
+<style>
+.edition-card { background: var(--card-bg); padding:20px; border-radius:12px; box-shadow:0 5px 15px rgba(0,0,0,0.6); }
+.edition-card img { border-radius: 8px; margin-bottom:15px; width:100%; height:auto; }
+.btn-primary-custom { background-color: var(--primary-color); color: var(--text-light); border:none; padding:10px 25px; border-radius:50px; transition:all 0.3s; }
+.btn-primary-custom:hover { background-color:#ff5e6c; }
+.modal-content { border-radius:12px; }
+</style>
+
 
 <section class="subscription-section" id="subscribe">
     <div class="container">
