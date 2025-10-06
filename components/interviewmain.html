@@ -3,24 +3,26 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Vibrant India Magazine: Executive Interviews & Media Coverage</title>
+    <title>Vibrant India Magazine: Media Gallery & Insights</title>
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-QWTKZyjpPEjISv5WaRU9OFeRpok6YctnYmDr5pNlyT2bRjXh0JMhjY6hW+ALEwIH" crossorigin="anonymous">
     <link href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.0/css/all.min.css" rel="stylesheet">
+    <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;700;900&display=swap" rel="stylesheet">
     <style>
 /* |--------------------------------------------------------------------------
 | 1. THEME VARIABLES 
 |--------------------------------------------------------------------------
 */
 :root {
-  --primary-color: #e63946;  /* Vibrant Red */
-  --secondary-color: #1d3557; /* Dark Blue */
-  --secondary-vibrant: #294870; 
-  --bg-dark: #0a0a0a;     /* Deep Black */
-  --card-bg: #1e1e1e;     /* Card Background */
-  --feature-bg: #141414;    
-  --text-light: #fff;
-  --text-gray-light: rgba(241, 250, 238, 0.75);
-  --text-dark-blue: #a8dadc;  
-  --header-height: 80px; /* CRITICAL: Set your FIXED HEADER HEIGHT here */
+ --primary-color: #e63946; /* Vibrant Red */
+ --secondary-color: #1d3557; /* Dark Blue */
+ --secondary-vibrant: #294870; 
+ --bg-dark: #0a0a0a;   /* Deep Black */
+ --card-bg: #1e1e1e;   /* Card Background */
+ --feature-bg: #141414;  
+ --text-light: #fff;
+ --text-gray-light: rgba(241, 250, 238, 0.75);
+ --text-dark-blue: #a8dadc; 
+ --header-height: 80px; /* CRITICAL: Set your FIXED HEADER HEIGHT here */
 }
 
 /* |--------------------------------------------------------------------------
@@ -28,236 +30,149 @@
 |--------------------------------------------------------------------------
 */
 body {
-  background-color: var(--bg-dark);
-  color: var(--text-light);
-  font-family: 'Poppins', sans-serif; 
-  overflow-x: hidden; 
+ background-color: var(--bg-dark);
+ color: var(--text-light);
+ font-family: 'Poppins', sans-serif; 
+ overflow-x: hidden; 
 }
 
 .main-content-push {
-  padding-top: var(--header-height); 
-  padding-bottom: 5rem;
+ padding-top: var(--header-height); 
+ padding-bottom: 5rem;
 }
 
 /* --- Visual and Utility Styles --- */
 .vibrant-glow {
-  text-shadow: 0 0 18px rgba(230, 57, 70, 1), 0 0 10px rgba(230, 57, 70, 0.7);
+ text-shadow: 0 0 18px rgba(230, 57, 70, 1), 0 0 10px rgba(230, 57, 70, 0.7);
 }
 .text-primary { color: var(--primary-color) !important; }
 .feature-box {
-  background: var(--card-bg) !important; 
-  border: 1px solid var(--secondary-color);
-  border-radius: 12px !important;
-  box-shadow: 0 5px 20px rgba(0, 0, 0, 0.9);
+ background: var(--card-bg) !important; 
+ border: 1px solid var(--secondary-color);
+ border-radius: 12px !important;
+ box-shadow: 0 5px 20px rgba(0, 0, 0, 0.9);
 }
 
 .btn-cta-main {
-  background-color: var(--primary-color) !important;
-  color: var(--text-light) !important;
-  font-weight: bold;
-  padding: 14px 40px; 
-  box-shadow: 0 4px 10px rgba(230, 57, 70, 0.6);
-  border: 2px solid var(--primary-color);
-  transition: all 0.3s ease;
+ background-color: var(--primary-color) !important;
+ color: var(--text-light) !important;
+ font-weight: bold;
+ padding: 14px 40px; 
+ box-shadow: 0 4px 10px rgba(230, 57, 70, 0.6);
+ border: 2px solid var(--primary-color);
+ transition: all 0.3s ease;
 }
 .btn-cta-main:hover {
-  background-color: #ff5e6c !important; 
-  transform: translateY(-2px); 
-  box-shadow: 0 8px 18px rgba(230, 57, 70, 1) !important;
+ background-color: #ff5e6c !important; 
+ transform: translateY(-2px); 
+ box-shadow: 0 8px 18px rgba(230, 57, 70, 1) !important;
 }
 
 
 /* |--------------------------------------------------------------------------
-| 3. HERO & ARTICLE STYLES
+| 3. MEDIA & RELATED ARTICLES SECTIONS
 |--------------------------------------------------------------------------
 */
-
-.interview-hero-section {
-  width: 100%;
-  height: calc(100vh - var(--header-height)); 
-  min-height: 600px; 
-  overflow: hidden;
-  position: relative;
-}
-
-.hero-image-overlay {
-  position: absolute;
-  top: 0;
-  left: 0;
-  width: 100%;
-  height: 100%;
-  background: linear-gradient(to top, rgba(0, 0, 0, 0.9) 0%, rgba(0, 0, 0, 0.5) 50%, rgba(0, 0, 0, 0.9) 100%); 
-}
-
-.hero-text-content {
-  position: absolute;
-  top: 0;
-  left: 0;
-  width: 100%;
-  height: 100%;
-  padding-bottom: 0 !important; 
-}
-
-.hero-text-content h1 {
-  font-size: 4.5rem; 
-}
 
 .interview-content-container {
-  max-width: 1280px; 
-  margin-top: -120px; /* Overlap effect */
-  position: relative;
-  z-index: 30; 
-  padding-top: 7rem !important; 
+ max-width: 1280px; 
+ margin-top: 0; 
+ position: relative;
+ z-index: 30; 
+ padding-top: 5rem !important;
 }
-
-/* --- Q&A Structure (Readability) --- */
-.qa-block {
-  padding-left: 30px; 
-  border-left: 8px solid var(--primary-color); 
-  margin-bottom: 5rem !important; 
-}
-.question {
-  color: var(--text-dark-blue) !important; 
-  font-size: 1.8rem; 
-  font-weight: 700 !important;
-}
-
-/* |--------------------------------------------------------------------------
-| 4. NEW SECTIONS (Media & Related Articles)
-|--------------------------------------------------------------------------
-*/
 
 .new-section-header {
-    margin-top: 5rem;
-    padding-bottom: 20px;
-    border-bottom: 3px solid var(--secondary-vibrant);
-    margin-bottom: 3rem;
-    text-align: center;
+  margin-top: 5rem;
+  padding-bottom: 20px;
+  border-bottom: 3px solid var(--secondary-vibrant);
+  margin-bottom: 3rem;
+  text-align: center;
 }
 .new-section-header h2 {
-    font-size: 2.5rem;
+  font-size: 2.5rem;
 }
 .new-section-header p {
-    font-size: 1.1rem;
+  font-size: 1.1rem;
 }
 
 /* Related Article Card Style */
 .article-card {
-    background: var(--card-bg);
-    border-radius: 10px;
-    overflow: hidden;
-    transition: transform 0.3s, box-shadow 0.3s;
-    border: 1px solid rgba(255, 255, 255, 0.05);
-    height: 100%;
-    display: flex;
-    flex-direction: column;
+  background: var(--card-bg);
+  border-radius: 10px;
+  overflow: hidden;
+  transition: transform 0.3s, box-shadow 0.3s;
+  border: 1px solid rgba(255, 255, 255, 0.05);
+  height: 100%;
+  display: flex;
+  flex-direction: column;
 }
 
 .article-card:hover {
-    transform: translateY(-5px);
-    box-shadow: 0 15px 30px rgba(0, 0, 0, 0.7);
+  transform: translateY(-5px);
+  box-shadow: 0 15px 30px rgba(0, 0, 0, 0.7);
 }
 
 .article-card-body {
-    padding: 20px;
-    flex-grow: 1;
+  padding: 20px;
+  flex-grow: 1;
 }
 
 .article-card img {
-    height: 200px; 
-    object-fit: cover;
+  height: 200px; 
+  object-fit: cover;
 }
 
 /* YouTube Embed Structure (Optimized for 6 videos) */
 .video-grid {
-    display: grid;
-    grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
-    gap: 30px;
-    margin-bottom: 5rem;
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+  gap: 30px;
+  margin-bottom: 5rem;
 }
 
 .youtube-embed-wrapper {
-    position: relative;
-    padding-bottom: 56.25%; /* 16:9 Aspect Ratio */
-    height: 0;
-    overflow: hidden;
-    border-radius: 10px;
-    box-shadow: 0 8px 20px rgba(0, 0, 0, 0.7);
+  position: relative;
+  padding-bottom: 56.25%; /* 16:9 Aspect Ratio */
+  height: 0;
+  overflow: hidden;
+  border-radius: 10px;
+  box-shadow: 0 8px 20px rgba(0, 0, 0, 0.7);
 }
 
 .youtube-embed-wrapper iframe {
-    position: absolute;
-    top: 0;
-    left: 0;
-    width: 100%;
-    height: 100%;
-    border: 0;
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  border: 0;
 }
 
 
 /* |--------------------------------------------------------------------------
-| 5. RESPONSIVE MEDIA QUERIES
+| 4. RESPONSIVE MEDIA QUERIES
 |--------------------------------------------------------------------------
 */
 
 /* Tablet and Smaller Desktop Adjustments */
 @media (max-width: 991px) {
-  .interview-hero-section {
-    height: 550px; 
-    min-height: 450px;
-  }
-  .hero-text-content h1 {
-    font-size: 3rem !important; 
-  }
-  .interview-content-container {
-    margin-top: -50px; 
-    padding-top: 4rem !important;
-  }
-  .pull-quote .display-6 {
+ .interview-content-container {
+  padding-top: 4rem !important;
+ }
+  .new-section-header h2 {
     font-size: 2rem;
   }
-    .new-section-header h2 {
-        font-size: 2rem;
-    }
 }
 
 /* Mobile Adjustments (Small devices) */
 @media (max-width: 576px) {
-  .interview-hero-section {
-    height: 380px; 
-    min-height: 350px;
+  .new-section-header h2 {
+    font-size: 1.5rem;
   }
-  .hero-text-content h1 {
-    font-size: 1.75rem !important; 
+  .video-grid {
+    grid-template-columns: 1fr;
   }
-  .hero-text-content h2 {
-    font-size: 1rem !important;
-  }
-  .pull-quote .display-6 {
-    font-size: 1.3rem;
-  }
-    .new-section-header h2 {
-        font-size: 1.5rem;
-    }
-  /* Mobile Q&A padding adjustments */
-  .qa-block {
-    padding-left: 15px; 
-    border-left-width: 4px;
-    margin-bottom: 3rem !important;
-  }
-    .article-card img {
-        height: 150px;
-    }
-  .question {
-    font-size: 1.1rem;
-  }
-  .answer {
-    font-size: 1rem;
-  }
-    /* Mobile Media Grid fix (Single column) */
-    .video-grid {
-        grid-template-columns: 1fr;
-    }
 }
 </style>
 </head>
@@ -265,209 +180,109 @@ body {
 
 <main class="container-fluid p-0 interview-main-content main-content-push">
 
-      <section class="interview-hero-section text-center position-relative">
-    
-    <div class="hero-image-overlay">
-      <img src="https://via.placeholder.com/1920x900/1d3557/e63946?text=RAJESH+VERMA+CEO+PROFILE" alt="Interviewee Profile" class="img-fluid w-100" style="object-fit: cover; height: 100%;">
-    </div>
-    
-    <div class="hero-text-content d-flex flex-column justify-content-center align-items-center p-4 p-lg-5">
-      <h5 class="text-primary text-uppercase fw-bold mb-2">
-        Exclusive Industry Insight
-      </h5>
-      <h1 class="display-2 fw-bolder text-light vibrant-glow mb-4">
-        "Digital is Not a Strategy—It's the Market."
-      </h1>
-      <h2 class="lead fw-light w-75 mx-auto text-gray-light">
-        A Conversation with <b class="text-light fw-bold">Rajesh Verma</b>, CEO of <b class="text-light fw-bold">Apex Home Solutions</b>
-      </h2>
-      <div class="meta-data text-light mt-4">
-        <span class="me-3"><i class="fa-solid fa-calendar-alt text-primary"></i> Sept 29, 2025</span>
-        <span class="me-3"><i class="fa-solid fa-user-edit text-primary"></i> By: Anita Sharma</span>
-      </div>
-    </div>
-  </section>
-
-      <div class="container interview-content-container py-5">
-    <div class="row justify-content-center">
-      
-                  <div class="col-lg-1 col-md-2 d-none d-lg-block">
-        <div class="sticky-sidebar py-4 text-center" style="top: 100px;">
-          <p class="small text-gray-light fw-bold mb-3 text-primary">SHARE</p>
-          <a href="#" class="d-block mb-3 text-light hover-lift-small"><i class="fab fa-linkedin-in fa-2x"></i></a>
-          <a href="#" class="d-block mb-3 text-light hover-lift-small"><i class="fab fa-twitter fa-2x"></i></a>
-          <a href="#" class="d-block mb-3 text-light hover-lift-small"><i class="fa-solid fa-envelope fa-2x"></i></a>
-          <a href="#" class="d-block mb-3 text-light hover-lift-small"><i class="fa-solid fa-print fa-2x"></i></a>
-        </div>
-      </div>
-
-                  <div class="col-lg-8 col-md-10">
-
-        <p class="lead text-gray-light mb-5 intro-text">
-          Rajesh Verma, the visionary behind Apex Home Solutions, is redefining the houseware and appliance landscape in India. We sat down with him to discuss the shift from traditional manufacturing to a data-driven, consumer-centric model and the strategic pivots needed to thrive in the new decade.
-        </p>
-
-                        <div class="qa-block mb-5">
-          <h3 class="question fw-bold mb-3">VIM: The pace of digital adoption has accelerated. How has Apex Home Solutions adjusted its supply chain and B2B approach to meet this change?</h3>
-          <p class="answer text-light">
-            <b class="text-light fw-bold">Rajesh Verma:</b> It’s been transformational, not just an adjustment. We realized early that <b class="text-light fw-bold">digital is not a strategy—it's the market itself.</b> Our B2B distributors now demand real-time inventory visibility and just-in-time delivery. We invested heavily in cloud-based logistics platforms and decentralized our warehousing. This allows us to serve Tier 2 and Tier 3 cities with the same efficiency as Mumbai or Delhi. The B2B relationship is now a partnership based on shared data, reducing risk for everyone.
-          </p>
-        </div>
-
-        <div class="pull-quote feature-box p-4 p-md-5 my-5 text-center">
-          <i class="fa-solid fa-quote-left display-4 text-primary mb-3 d-block"></i>
-          <p class="display-6 fw-bold text-light mb-0">
-            "The biggest mistake a manufacturer can make today is designing a product without first seeing the user's kitchen."
-          </p>
-          <footer class="blockquote-footer mt-3 fs-5">Rajesh Verma, CEO</footer>
-        </div>
-
-        <div class="qa-block mb-5">
-          <h3 class="question fw-bold mb-3">VIM: Let's talk product. What is the biggest design pivot Apex has made in the last two years, driven by consumer feedback from the Indian market?</h3>
-          <p class="answer text-light">
-            <b class="text-light fw-bold">Rajesh Verma:</b> It's the move toward <b class="text-light fw-bold">minimalist, modular design</b>. Indian kitchens, particularly in apartments, are space-constrained. Consumers demanded appliances that serve multiple functions and are easy to store. For example, our new modular induction cooktop system can be broken down into three independent units or stacked seamlessly. We found that performance and quality are non-negotiable, but if the product doesn't fit the physical constraints of their home, it simply won't sell. This shift requires us to rethink everything, from component sourcing to packaging size.
-          </p>
-        </div>
-
-        <div class="qa-block mb-5">
-          <h3 class="question fw-bold mb-3">VIM: The B2B trade show model is evolving. What role do physical trade events like the Vibrant India Home Expo still play in your strategy compared to digital platforms?</h3>
-          <p class="answer text-light">
-            <b class="text-light fw-bold">Rajesh Verma:</b> Trade shows remain absolutely crucial, but their function has changed. Digital platforms are for efficient reordering and low-touch transactions. Trade events are for <b class="text-light fw-bold">trust-building, large-volume contracts, and tactile product experience.</b> You cannot truly appreciate the finish of our premium stainless steel line or the interface of a new smart appliance without seeing and touching it. Furthermore, it's the perfect environment for us to conduct high-level strategic discussions with national distributors, which often lead to exclusive partnership deals you simply can't close over a Zoom call. It’s where relationships are solidified.
-          </p>
-        </div>
-
-        <div class="image-break my-5 text-center">
-          <img src="https://via.placeholder.com/1000x450/141414/e63946?text=APEX+FACTORY+OR+DATA+VISUALIZATION" alt="Factory Insight" class="img-fluid rounded-3 shadow-lg" style="border: 2px solid var(--secondary-color);">
-          <p class="small text-gray-light mt-3">Image: Apex's new automated production line, driving 20% efficiency gains.</p>
-        </div>
-
-        <div class="qa-block mb-5">
-          <h3 class="question fw-bold mb-3">VIM: Looking ahead 3-5 years, what is the single biggest opportunity for the Indian houseware sector, and what is the biggest risk?</h3>
-          <p class="answer text-light">
-            <b class="text-light fw-bold">Rajesh Verma:</b> The biggest opportunity is the <b class="text-light fw-bold">Rise of the Affluent Tier 2 Consumer.</b> Their spending power is growing faster than metro cities, and they demand premium, branded, quality products. Companies that invest in local distribution and regional marketing will capture this segment. The biggest risk, ironically, is also the market: <b class="text-light fw-bold">Global Volatility.</b> Unpredictable raw material prices (metals, plastics) and international trade dynamics require us to build greater domestic resilience and hedge against currency fluctuations. It's a challenging but highly rewarding environment.
-          </p>
-        </div>
+  <div class="container interview-content-container py-5">
+      <div class="row justify-content-center">
+   
+        <div class="col-lg-10 col-md-12">
                 
-                        <div class="about-interviewee feature-box p-4 p-md-5 my-5">
-          <div class="row align-items-center">
-            <div class="col-md-3 text-center mb-3 mb-md-0">
-              <img src="https://via.placeholder.com/200x200/294870/ffffff?text=Rajesh+V." class="img-fluid rounded-circle shadow-lg" alt="Rajesh Verma" style="border: 4px solid var(--primary-color);">
-            </div>
-            <div class="col-md-9">
-              <h4 class="text-primary fw-bold mb-2">About Rajesh Verma</h4>
-              <p class="text-gray-light mb-2">
-                Rajesh Verma is the CEO and Chairman of Apex Home Solutions, a leader in premium stainless steel kitchenware and smart home appliances in India. With over two decades in the industry, he is an advocate for sustainable manufacturing and data-driven supply chain management.
-              </p>
-              <p class="small text-light mb-0">
-                <i class="fa-solid fa-award me-1"></i> Recipient of the 2023 India Manufacturing Excellence Award.
-              </p>
-              <p class="small text-light mb-0">
-                <i class="fa-solid fa-location-dot me-1"></i> Based in Mumbai, leading a team of 4,000+ employees.
-              </p>
-            </div>
+                        <div class="row new-section-header">
+          <div class="col-12">
+            <h2 class="text-light fw-bold"><i class="fa-solid fa-microphone-alt text-primary me-2"></i> Related Executive Interviews</h2>
+            <p class="text-gray-light">Read more in-depth analyses and exclusive conversations with industry leaders in the houseware and appliance sectors.</p>
           </div>
         </div>
-                
-                
-                <div class="row new-section-header">
-                    <div class="col-12">
-                        <h2 class="text-light fw-bold"><i class="fa-solid fa-microphone-alt text-primary me-2"></i> Related Executive Interviews</h2>
-                        <p class="text-gray-light">Read more in-depth analyses and exclusive conversations with industry leaders.</p>
-                    </div>
+
+        <div class="row g-4 mb-5">
+          <div class="col-lg-4 col-md-6">
+            <a href="/article-link-1.html" class="text-decoration-none">
+              <div class="article-card">
+                <img src="https://via.placeholder.com/400x200/294870/ffffff?text=SURESH+PATEL" class="card-img-top" alt="Suresh Patel">
+                <div class="article-card-body">
+                  <h5 class="text-primary text-uppercase small fw-bold">Steel & Sourcing</h5>
+                  <h4 class="text-light fw-bold">Suresh Patel on India's Stainless Steel Future</h4>
+                  <p class="small text-gray-light mb-0">Patel Group's CEO discusses domestic resilience and new export markets in houseware.</p>
                 </div>
-
-                <div class="row g-4 mb-5">
-                    <div class="col-lg-4 col-md-6">
-                        <a href="/article-link-1.html" class="text-decoration-none">
-                            <div class="article-card">
-                                <img src="https://via.placeholder.com/400x200/294870/ffffff?text=SURESH+PATEL" class="card-img-top" alt="Suresh Patel">
-                                <div class="article-card-body">
-                                    <h5 class="text-primary text-uppercase small fw-bold">Steel & Sourcing</h5>
-                                    <h4 class="text-light fw-bold">Suresh Patel on India's Stainless Steel Future</h4>
-                                    <p class="small text-gray-light mb-0">Patel Group's CEO discusses domestic resilience and new export markets.</p>
-                                </div>
-                            </div>
-                        </a>
-                    </div>
-                    <div class="col-lg-4 col-md-6">
-                        <a href="/article-link-2.html" class="text-decoration-none">
-                            <div class="article-card">
-                                <img src="https://via.placeholder.com/400x200/141414/e63946?text=NEHA+SINGH" class="card-img-top" alt="Neha Singh">
-                                <div class="article-card-body">
-                                    <h5 class="text-primary text-uppercase small fw-bold">Hotelware Trends</h5>
-                                    <h4 class="text-light fw-bold">Designing for Hospitality: Neha Singh's Vision</h4>
-                                    <p class="small text-gray-light mb-0">The founder of LuxServe details post-pandemic hotel supply demands.</p>
-                                </div>
-                            </div>
-                        </a>
-                    </div>
-                    <div class="col-lg-4 col-md-6">
-                        <a href="/article-link-3.html" class="text-decoration-none">
-                            <div class="article-card">
-                                <img src="https://via.placeholder.com/400x200/1d3557/a8dadc?text=GLOBAL+TRADE" class="card-img-top" alt="Global Trade">
-                                <div class="article-card-body">
-                                    <h5 class="text-primary text-uppercase small fw-bold">Global Market</h5>
-                                    <h4 class="text-light fw-bold">Navigating Trade Tariffs: Export Strategies</h4>
-                                    <p class="small text-gray-light mb-0">An analysis of key challenges for Indian manufacturers entering the EU.</p>
-                                </div>
-                            </div>
-                        </a>
-                    </div>
+              </div>
+            </a>
+          </div>
+          <div class="col-lg-4 col-md-6">
+            <a href="/article-link-2.html" class="text-decoration-none">
+              <div class="article-card">
+                <img src="https://via.placeholder.com/400x200/141414/e63946?text=NEHA+SINGH" class="card-img-top" alt="Neha Singh">
+                <div class="article-card-body">
+                  <h5 class="text-primary text-uppercase small fw-bold">Hotelware Trends</h5>
+                  <h4 class="text-light fw-bold">Designing for Hospitality: Neha Singh's Vision</h4>
+                  <p class="small text-gray-light mb-0">The founder of LuxServe details post-pandemic hotel supply demands for quality tableware.</p>
                 </div>
-
-
-                <div class="row new-section-header">
-                    <div class="col-12">
-                        <h2 class="text-light fw-bold"><i class="fa-brands fa-youtube text-primary me-2"></i> Vibrant India Fair Video Gallery</h2>
-                        <p class="text-gray-light">Watch video highlights, exhibitor interviews, and key moments from our latest trade events.</p>
-                    </div>
+              </div>
+            </a>
+          </div>
+          <div class="col-lg-4 col-md-6">
+            <a href="/article-link-3.html" class="text-decoration-none">
+              <div class="article-card">
+                <img src="https://via.placeholder.com/400x200/1d3557/a8dadc?text=GLOBAL+TRADE" class="card-img-top" alt="Global Trade">
+                <div class="article-card-body">
+                  <h5 class="text-primary text-uppercase small fw-bold">Global Market</h5>
+                  <h4 class="text-light fw-bold">Navigating Trade Tariffs: Export Strategies</h4>
+                  <p class="small text-gray-light mb-0">An analysis of key challenges for Indian manufacturers entering the EU and US markets.</p>
                 </div>
+              </div>
+            </a>
+          </div>
+        </div>
 
-                <div class="video-grid">
-                    <div class="youtube-embed-wrapper">
-                        <iframe src="https://youtu.be/ZOmP_o4bAn4?si=aPupvOfb3bwTq9_C" title="Vibrant India Expo 2024 Highlights" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe>
-                    </div>
 
-                    <div class="youtube-embed-wrapper">
-                        <iframe src="https://www.youtube.com/embed/EMBED_CODE_2?rel=0" title="CEO Panel Discussion" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe>
-                    </div>
-                    
-                    <div class="youtube-embed-wrapper">
-                        <iframe src="https://www.youtube.com/embed/EMBED_CODE_3?rel=0" title="VIM Exclusive: Kitchenware Trends" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe>
-                    </div>
-                    
-                    <div class="youtube-embed-wrapper">
-                        <iframe src="https://www.youtube.com/embed/EMBED_CODE_4?rel=0" title="Vibrant India Fair 2025 News Report" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe>
-                    </div>
+                        <div class="row new-section-header">
+          <div class="col-12">
+            <h2 class="text-light fw-bold"><i class="fa-brands fa-youtube text-primary me-2"></i> Vibrant India Fair Video Gallery</h2>
+            <p class="text-gray-light">Watch video highlights, exhibitor interviews, and key moments from our latest trade events.</p>
+          </div>
+        </div>
 
-                    <div class="youtube-embed-wrapper">
-                        <iframe src="https://www.youtube.com/embed/EMBED_CODE_5?rel=0" title="Exhibitor Interview: New Designs" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe>
-                    </div>
+        <div class="video-grid">
+                              <div class="youtube-embed-wrapper">
+            <iframe src="https://www.youtube.com/embed/vwspB3kQN1k?rel=0" title="Vibrant India 2024 Day 1 Highlights" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe>
+          </div>
 
-                    <div class="youtube-embed-wrapper">
-                        <iframe src="https://www.youtube.com/embed/EMBED_CODE_6?rel=0" title="Closing Ceremony and Awards" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe>
-                    </div>
-                </div>
-                
+                              <div class="youtube-embed-wrapper">
+            <iframe src="https://www.youtube.com/embed/0Q7Sq3S999k?rel=0" title="Vibrant India Expo 2025 Delhi - Utensils & Home Appliance Exhibition" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe>
+          </div>
+          
+                              <div class="youtube-embed-wrapper">
+            <iframe src="https://www.youtube.com/embed/lorhV8j5H6o?rel=0" title="Vibrant India 2025 Chennai Houseware Exhibition" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe>
+          </div>
+          
+                              <div class="youtube-embed-wrapper">
+            <iframe src="https://www.youtube.com/embed/cALD8Kt94Ug?rel=0" title="Kitchenware item business ideas expo" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe>
+          </div>
+
+                              <div class="youtube-embed-wrapper">
+            <iframe src="https://www.youtube.com/embed/CkTDxIA_Wew?rel=0" title="VIBRANT INDIA 2023 - Max Fresh MD Interview" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe>
+          </div>
+
+                              <div class="youtube-embed-wrapper">
+            <iframe src="https://www.youtube.com/embed/n5SXzuyzRFY?rel=0" title="Vibrant India 2025 Booth Tour" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe>
+          </div>
+        </div>
+        
 
                         <div class="conclusion-block feature-box p-4 p-md-5 mt-5 text-center">
-          <h4 class="text-light fw-bold mb-3">Want More Deep Dive Executive Interviews?</h4>
-          <p class="text-gray-light mb-4">
-            Subscribe to our premium digital edition for weekly executive insights and proprietary market data delivered straight to your inbox.
-          </p>
-          <a href="/subscribe-form.html" class="btn btn-cta-main btn-lg rounded-pill px-5">
-            Subscribe Now <i class="fa-solid fa-envelope-open-text ms-2"></i>
-          </a>
-        </div>
+               <h4 class="text-light fw-bold mb-3">Want More Deep Dive Executive Interviews?</h4>
+               <p class="text-gray-light mb-4">
+                  Subscribe to our premium digital edition for weekly executive insights and proprietary market data delivered straight to your inbox.
+               </p>
+               <a href="/subscribe-form.html" class="btn btn-cta-main btn-lg rounded-pill px-5">
+                  Subscribe Now <i class="fa-solid fa-envelope-open-text ms-2"></i>
+               </a>
+           </div>
 
-      </div>
-      
-      <div class="col-lg-3 d-none d-lg-block">
-        </div>
-    </div>
+         </div>
+     </div>
   </div>
 
 </main>
+
+<script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/js/bootstrap.bundle.min.js" integrity="sha384-YvpcrYf0tY3lHB60NNkmXc5s9fDVZLESaAA55NDzOxhy9GkcIdslK1eN7N6jIeHz" crossorigin="anonymous"></script>
 
 </body>
 </html>
