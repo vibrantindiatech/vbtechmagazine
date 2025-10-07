@@ -1,0 +1,374 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Vibrant India Magazine | Sponsorship Opportunities</title>
+
+  <!-- Icons & Fonts -->
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.0/css/all.min.css">
+  <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@400;600;700&display=swap" rel="stylesheet">
+  <script src="https://cdn.jsdelivr.net/npm/chart.js"></script>
+
+  <style>
+  /* ===========================================
+     GLOBAL THEME
+  ============================================ */
+  :root {
+      --primary-color: #e63946;
+      --secondary-color: #1d3557;
+      --bg-dark: #0a0a0a;
+      --card-bg: #161616;
+      --feature-bg: #1e1e1e;
+      --text-light: #f1faee;
+      --text-gray-light: rgba(241, 250, 238, 0.8);
+      --border-color: rgba(230, 57, 70, 0.2);
+  }
+  * { box-sizing: border-box; margin: 0; padding: 0; }
+  body {
+      background: var(--bg-dark);
+      color: var(--text-light);
+      font-family: 'Poppins', sans-serif;
+      line-height: 1.6;
+  }
+  a { text-decoration: none; color: inherit; }
+
+  .container {
+      width: 100%;
+      max-width: 1280px;
+      margin: 0 auto;
+      padding: 0 2rem;
+  }
+
+  .text-center { text-align: center; }
+  .vibrant-glow { text-shadow: 0 0 18px rgba(230, 57, 70, 1), 0 0 10px rgba(230, 57, 70, 0.7); }
+
+  /* ===========================================
+     HERO SECTION
+  ============================================ */
+  .hero {
+      text-align: center;
+      padding: 4rem 2rem;
+  }
+  .hero h1 {
+      font-size: 3rem;
+      font-weight: 700;
+      color: var(--text-light);
+  }
+  .hero p {
+      color: var(--text-gray-light);
+      max-width: 700px;
+      margin: 1rem auto 3rem;
+  }
+  .hero-stats {
+      display: grid;
+      grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
+      gap: 1.5rem;
+      margin-top: 3rem;
+  }
+  .stat-item {
+      background: var(--card-bg);
+      border-radius: 10px;
+      padding: 1.5rem;
+      border: 1px solid var(--border-color);
+      transition: 0.3s;
+  }
+  .stat-item:hover { border-color: var(--primary-color); transform: translateY(-4px); }
+  .stat-number { color: var(--primary-color); font-size: 2rem; font-weight: 700; }
+  .stat-label { font-size: 0.9rem; color: var(--text-gray-light); text-transform: uppercase; }
+
+  /* ===========================================
+     TIER CARDS
+  ============================================ */
+  .section { margin: 6rem 0; }
+  .section-title {
+      font-size: 2.3rem;
+      text-align: center;
+      font-weight: 700;
+      margin-bottom: 2rem;
+  }
+  .tier-card {
+      background: var(--card-bg);
+      border: 1px solid var(--border-color);
+      border-radius: 12px;
+      padding: 2.5rem;
+      margin: 1rem auto;
+      max-width: 700px;
+      box-shadow: 0 5px 20px rgba(0,0,0,0.4);
+      transition: 0.3s;
+  }
+  .tier-card:hover { transform: translateY(-6px); border-color: var(--primary-color); }
+  .tier-title { font-size: 1.6rem; margin-bottom: 0.5rem; }
+  .tier-price { font-size: 1.8rem; color: var(--primary-color); margin-bottom: 1rem; }
+  .benefits-list { list-style: none; padding-left: 0; }
+  .benefits-list li { padding: 0.6rem 0; border-bottom: 1px solid rgba(255,255,255,0.05); }
+  .tier-button {
+      margin-top: 1rem;
+      padding: 0.8rem 1.5rem;
+      border-radius: 50px;
+      font-weight: 600;
+      background: var(--primary-color);
+      border: none;
+      cursor: pointer;
+      color: white;
+      transition: 0.3s;
+  }
+  .tier-button:hover { background: #ff4654; }
+
+  /* ===========================================
+     DATA ANALYSIS SECTION
+  ============================================ */
+  .data-section {
+      background: var(--feature-bg);
+      border-radius: 15px;
+      padding: 4rem 2rem;
+      margin: 6rem 0;
+      text-align: center;
+      border: 1px solid var(--border-color);
+  }
+  .data-grid {
+      display: grid;
+      grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+      gap: 1.5rem;
+      margin-top: 2rem;
+  }
+  .data-card {
+      background: var(--card-bg);
+      padding: 2rem;
+      border-radius: 10px;
+      border: 1px solid rgba(255,255,255,0.05);
+      box-shadow: 0 5px 15px rgba(0,0,0,0.3);
+      transition: 0.3s;
+  }
+  .data-card:hover { border-color: var(--primary-color); transform: translateY(-4px); }
+  canvas { width: 100%; max-width: 400px; margin: 0 auto; }
+
+  /* ===========================================
+     REGISTRATION FORM
+  ============================================ */
+  .registration-section {
+      background: var(--feature-bg);
+      border-radius: 15px;
+      padding: 4rem 2rem;
+      border: 1px solid var(--border-color);
+  }
+  .registration-form-container {
+      max-width: 800px;
+      margin: 0 auto;
+      background: var(--card-bg);
+      padding: 2.5rem;
+      border-radius: 12px;
+      border: 1px solid rgba(255,255,255,0.05);
+  }
+  .form-grid {
+      display: grid;
+      grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
+      gap: 1.5rem;
+  }
+  label {
+      font-weight: 600;
+      color: var(--text-light);
+      margin-bottom: 0.5rem;
+      display: block;
+  }
+  input, select, textarea {
+      background: var(--feature-bg);
+      color: var(--text-light);
+      border: 1px solid rgba(255,255,255,0.1);
+      border-radius: 8px;
+      padding: 0.8rem 1rem;
+      font-size: 0.95rem;
+      width: 100%;
+      transition: 0.3s;
+  }
+  input:focus, select:focus, textarea:focus {
+      border-color: var(--primary-color);
+      box-shadow: 0 0 8px rgba(230, 57, 70, 0.4);
+  }
+  textarea { resize: none; }
+
+  .btn-submit {
+      margin-top: 2rem;
+      background: var(--primary-color);
+      border: none;
+      padding: 1rem 2rem;
+      border-radius: 50px;
+      color: white;
+      font-weight: 600;
+      cursor: pointer;
+      transition: 0.3s;
+  }
+  .btn-submit:hover { background: #ff4654; }
+
+  /* ===========================================
+     RESPONSIVE
+  ============================================ */
+  @media (max-width: 768px) {
+      .hero h1 { font-size: 2.2rem; }
+      .section-title { font-size: 1.8rem; }
+      .registration-form-container { padding: 1.5rem; }
+      .tier-card { padding: 2rem; }
+  }
+  </style>
+</head>
+
+<body>
+
+<!-- ================= HERO ================= -->
+<section class="hero container">
+    <h1 class="vibrant-glow">Exclusive Magazine Sponsorships</h1>
+    <p>Partner with <b>Vibrant India Magazine</b> to reach India's leading industry decision-makers.</p>
+    <div class="hero-stats">
+        <div class="stat-item">
+            <span class="stat-number">75K+</span>
+            <div class="stat-label">Monthly Readership</div>
+        </div>
+        <div class="stat-item">
+            <span class="stat-number">30+</span>
+            <div class="stat-label">Countries Reach</div>
+        </div>
+        <div class="stat-item">
+            <span class="stat-number">85%</span>
+            <div class="stat-label">C-Level Executives</div>
+        </div>
+    </div>
+</section>
+
+<!-- ================= TIERS ================= -->
+<section class="section container">
+    <h2 class="section-title vibrant-glow">Front Page Sponsor</h2>
+    <div class="tier-card">
+        <h3 class="tier-title">Premium Front Cover Sponsorship</h3>
+        <div class="tier-price">₹1,50,000</div>
+        <ul class="benefits-list">
+            <li><i class="fa-solid fa-check text-primary"></i> Brand logo on front cover masthead</li>
+            <li><i class="fa-solid fa-check text-primary"></i> Full-page advertorial feature</li>
+            <li><i class="fa-solid fa-check text-primary"></i> Featured in social media campaigns</li>
+        </ul>
+        <button class="tier-button" onclick="selectTier('Front Page Sponsor - ₹1,50,000')">Select Front Page</button>
+    </div>
+</section>
+
+<section class="section container">
+    <h2 class="section-title vibrant-glow">Last Page Sponsor</h2>
+    <div class="tier-card">
+        <h3 class="tier-title">Exclusive Back Cover Sponsorship</h3>
+        <div class="tier-price">₹1,00,000</div>
+        <ul class="benefits-list">
+            <li><i class="fa-solid fa-check text-primary"></i> Full-page back cover advertisement</li>
+            <li><i class="fa-solid fa-check text-primary"></i> Mention in magazine masthead</li>
+            <li><i class="fa-solid fa-check text-primary"></i> Option for advertorial insert</li>
+        </ul>
+        <button class="tier-button" onclick="selectTier('Last Page Sponsor - ₹1,00,000')">Select Last Page</button>
+    </div>
+</section>
+
+<!-- ================= DATA ANALYSIS ================= -->
+<section class="data-section container">
+    <h2 class="section-title vibrant-glow">Sponsorship Data Insights</h2>
+    <p>Our audience engagement and sponsor impact metrics (sample data)</p>
+    <div class="data-grid">
+        <div class="data-card">
+            <h3>Total Sponsors</h3>
+            <h1 style="color: var(--primary-color); font-size:2.5rem;">24</h1>
+            <p>Active partnerships this quarter</p>
+        </div>
+        <div class="data-card">
+            <h3>Average Package Value</h3>
+            <h1 style="color: var(--primary-color); font-size:2.5rem;">₹1.2 Lakh</h1>
+            <p>Average revenue per sponsor</p>
+        </div>
+        <div class="data-card">
+            <canvas id="chart1"></canvas>
+        </div>
+    </div>
+</section>
+
+<!-- ================= REGISTRATION FORM ================= -->
+<section class="registration-section container" id="register">
+    <h2 class="section-title vibrant-glow">Sponsorship Registration</h2>
+    <p class="text-center text-gray-light">Fill out your details below to confirm your sponsorship interest.</p>
+
+    <div class="registration-form-container">
+        <form id="sponsorForm" onsubmit="sendToWhatsApp(event)">
+            <div class="form-grid">
+                <div>
+                    <label for="name">Full Name*</label>
+                    <input type="text" id="name" required>
+                </div>
+                <div>
+                    <label for="company">Company Name*</label>
+                    <input type="text" id="company" required>
+                </div>
+                <div>
+                    <label for="email">Email*</label>
+                    <input type="email" id="email" required>
+                </div>
+                <div>
+                    <label for="phone">WhatsApp Number*</label>
+                    <input type="tel" id="phone" required>
+                </div>
+                <div style="grid-column: 1 / -1;">
+                    <label for="tier">Select Sponsorship Tier*</label>
+                    <select id="tier" required>
+                        <option value="">-- Choose Tier --</option>
+                        <option value="Front Page Sponsor - ₹1,50,000">Front Page Sponsor - ₹1,50,000</option>
+                        <option value="Last Page Sponsor - ₹1,00,000">Last Page Sponsor - ₹1,00,000</option>
+                    </select>
+                </div>
+                <div style="grid-column: 1 / -1;">
+                    <label for="message">Additional Message</label>
+                    <textarea id="message" rows="4"></textarea>
+                </div>
+            </div>
+            <div class="text-center">
+                <button type="submit" class="btn-submit"><i class="fa-brands fa-whatsapp"></i> Send via WhatsApp</button>
+            </div>
+        </form>
+    </div>
+</section>
+
+<script>
+/* ================== WHATSAPP FUNCTION ================== */
+function sendToWhatsApp(event) {
+    event.preventDefault();
+    const name = document.getElementById("name").value;
+    const company = document.getElementById("company").value;
+    const email = document.getElementById("email").value;
+    const phone = document.getElementById("phone").value;
+    const tier = document.getElementById("tier").value;
+    const message = document.getElementById("message").value;
+
+    const whatsappNumber = "919876543210"; // <-- REPLACE WITH YOUR NUMBER
+    const text = `*Sponsorship Registration - Vibrant India Magazine*\n\nName: ${name}\nCompany: ${company}\nEmail: ${email}\nPhone: ${phone}\nTier: ${tier}\nMessage: ${message}`;
+    const url = `https://wa.me/${whatsappNumber}?text=${encodeURIComponent(text)}`;
+    window.open(url, "_blank");
+}
+
+/* ================== PRESELECT TIER ================== */
+function selectTier(tierName) {
+    document.getElementById("tier").value = tierName;
+    document.getElementById("register").scrollIntoView({ behavior: "smooth" });
+}
+
+/* ================== CHART.JS ================== */
+const ctx = document.getElementById('chart1').getContext('2d');
+new Chart(ctx, {
+    type: 'doughnut',
+    data: {
+        labels: ['Front Page Sponsors', 'Last Page Sponsors', 'Digital Ads'],
+        datasets: [{
+            label: 'Sponsorship Types',
+            data: [12, 8, 4],
+            backgroundColor: ['#e63946', '#457b9d', '#a8dadc'],
+            borderWidth: 0
+        }]
+    },
+    options: {
+        plugins: { legend: { labels: { color: '#fff' } } },
+        responsive: true
+    }
+});
+</script>
+</body>
+</html>
