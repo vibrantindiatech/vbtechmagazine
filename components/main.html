@@ -14,9 +14,9 @@
 }
 body {margin:0; font-family: Arial, sans-serif; background:#111; color:#fff;}
 
-/* --- HERO --- */
+/* --- HERO (UPDATED FOR FULL MOBILE RESPONSIVENESS) --- */
 .hero-section {
-height: 100vh;
+height: 100vh; /* Default for desktop/larger screens */
 background: var(--secondary-color) url('assets/images/vimbg.png') center/cover no-repeat;
 color: var(--text-light);
 position: relative;
@@ -30,7 +30,10 @@ content:""; position:absolute; inset:0;
 background: rgba(0,0,0,0.45); z-index:1;
 }
 .hero-content {position:relative; z-index:2; padding-top:80px; padding-bottom:50px;}
+
+/* Default Desktop H1 Style */
 .hero-content h1 {font-size:4rem; font-weight:900; line-height:1.05; text-transform:uppercase; text-shadow:0 0 15px rgba(230,57,70,0.6);}
+
 .hero-content .lead {font-size:1.25rem; max-width:600px; margin:1.5rem 0 3rem; opacity:0.85; border-left:3px solid var(--primary-color); padding-left:15px;}
 .btn-primary-custom {background: var(--primary-color); border:none; padding:12px 35px; font-weight:700; text-transform:uppercase; letter-spacing:1px; color:#fff; cursor:pointer; transition: all 0.3s ease; border-radius: 8px;}
 .btn-primary-custom:hover {background:#ff5e6c; transform: translateY(-2px);}
@@ -77,14 +80,55 @@ transition: transform 0.4s, box-shadow 0.4s;
 /* --- CTA --- */
 .cta-section {padding:80px 20px; background:linear-gradient(135deg, var(--secondary-color) 0%, #0d1a2b 100%); text-align:center; color:#fff;}
 
-/* --- Responsive --- */
-@media (max-width:992px){.edition-card {margin-bottom:20px;}}
+
+/* --- Responsive (ENHANCED FOR HERO BANNER MOBILE VIEW) --- */
+@media (max-width:992px){
+    .edition-card {margin-bottom:20px;}
+}
 @media (max-width:768px){
-.hero-section {height:auto; padding:80px 20px;}
-.hero-content h1 {font-size:2.5rem;}
-.hero-content .lead {font-size:1rem;}
-.btn-primary-custom, .btn-outline-light {width:100%; margin-bottom:10px;}
-.stat-item {border:none; border-bottom:1px solid rgba(255,255,255,0.15);}
+    /* 1. HERO SECTION: Full Responsive Banner */
+    .hero-section {
+        height: auto; /* Allow height to adapt to content */
+        min-height: 80vh; /* Keep the banner prominent (80% of viewport height minimum) */
+        padding: 80px 20px; /* Generous padding top/bottom to show full banner */
+        align-items: flex-start; /* Align content to the top for better mobile flow */
+    }
+    .hero-content {
+        padding-top: 0; 
+        padding-bottom: 0;
+    }
+    
+    /* 2. HERO HEADING: Scaling Down */
+    .hero-content h1 {
+        font-size: 2.5rem; /* Reduced from 4rem */
+        line-height: 1.2;
+    }
+    .hero-content h1 .text-start {
+        font-size: 0.4em !important; /* Keep the subtitle small but visible */
+    }
+    .hero-content .lead {
+        font-size: 1rem;
+        margin: 1rem 0 2rem;
+    }
+    
+    /* 3. BUTTONS: Stack vertically */
+    .d-sm-flex {
+        display: block !important; /* Force buttons to stack (overrides flex utility) */
+    }
+    .btn-primary-custom, .btn-outline-light {
+        width:100%; 
+        margin-bottom:10px;
+    }
+    
+    /* Other Mobile Adjustments */
+    .stat-item {border:none; border-bottom:1px solid rgba(255,255,255,0.15);}
+    .highlight-card { margin-bottom: 20px;}
+}
+/* Extra Small Screen Adjustment */
+@media (max-width: 480px) {
+    .hero-content h1 {
+        font-size: 2rem; 
+    }
 }
 </style>
 </head>
@@ -125,7 +169,6 @@ transition: transform 0.4s, box-shadow 0.4s;
     <h2 class="text-center mb-5 text-primary fw-bold">The Latest Editions</h2>
     <div class="row g-4 justify-content-center">
 
-        <!-- September 2025 Edition -->
         <div class="col-lg-6 col-md-10">
             <div class="edition-card">
                 <span class="badge">Now Available</span>
@@ -137,14 +180,12 @@ transition: transform 0.4s, box-shadow 0.4s;
                     <li><i class="fa-solid fa-check" style="color: var(--primary-color); margin-right:8px;"></i>Exclusive CEO Interview</li>
                     <li><i class="fa-solid fa-check" style="color: var(--primary-color); margin-right:8px;"></i>Vibrant India Fair Report</li>
                 </ul>
-                <!-- Open PDF in Modal -->
                 <a href="../subscribe.html" class="btn btn-primary-custom mt-2">
                     <i class="fa-solid fa-book-open me-2"></i> Subscribe Now
                 </a>
             </div>
         </div>
 
-        <!-- October 2025 Edition -->
         <div class="col-lg-6 col-md-10">
             <div class="edition-card">
                 <span class="badge">Now Available</span>
@@ -156,7 +197,6 @@ transition: transform 0.4s, box-shadow 0.4s;
                     <li><i class="fa-solid fa-check" style="color: var(--primary-color); margin-right:8px;"></i>Expert Panel Interview</li>
                     <li><i class="fa-solid fa-check" style="color: var(--primary-color); margin-right:8px;"></i>Industry Event Highlights</li>
                 </ul>
-                <!-- Open PDF in Modal -->
                 <a href="../subscribe.html" class="btn btn-primary-custom mt-2">
                     <i class="fa-solid fa-book-open me-2"></i> Subscribe Now
                 </a>
@@ -169,6 +209,7 @@ transition: transform 0.4s, box-shadow 0.4s;
 
 
 <style>
+/* Re-added minor edition card style for clarity */
 .edition-card { background: var(--card-bg); padding:20px; border-radius:12px; box-shadow:0 5px 15px rgba(0,0,0,0.6); }
 .edition-card img { border-radius: 8px; margin-bottom:15px; width:100%; height:auto; }
 .btn-primary-custom { background-color: var(--primary-color); color: var(--text-light); border:none; padding:10px 25px; border-radius:50px; transition:all 0.3s; }
